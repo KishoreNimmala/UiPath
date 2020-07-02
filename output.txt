@@ -1,0 +1,12 @@
+03/30/2020 11:53:55 => [Debug] Execution started for file: TextFormImage
+03/30/2020 11:53:56 => [Info] CheggSkipper execution started
+03/30/2020 11:54:01 => [Info] ”I ‘ll§ll\l"“\ l I
+break;
+default:
+System.out.print1n("Unknown commandE"):
+}
+System.out.print1n();
+} while(choice != 'q'):
+} System.out.print1n("Thank you!");
+‘}
+03/30/2020 11:54:01 => [Info] CheggSkipper execution ended in: 00:00:05

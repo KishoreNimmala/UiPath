@@ -1,0 +1,137 @@
+<extract>
+	<column exact='1' name='Asin' attr='href'>
+		<webctrl tag='li' />
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div' idx='3' />
+		<webctrl tag='div' idx='1'/>
+		<webctrl tag='a' />
+  	</column>
+	<column exact='1' name='Price' attr='text'>
+		<webctrl tag='li' />
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div' idx='3' />
+		<webctrl tag='div' idx='1'/>
+		<webctrl tag='a' idx='1'/>
+		<webctrl tag="span" idx='2'/>
+		<webctrl tag="font" idx='1'/>
+		<webctrl tag="font" idx='1'/>
+  	</column>
+</extract>
+
+
+<extract>
+	<column exact='0' name='Asin' attr='href' name2='Price' attr2='text'>
+		<webctrl tag='li' />
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div' idx='3' />
+		<webctrl tag='div' idx='1'/>
+		<webctrl tag='a' idx='1'/>
+		<webctrl tag='SPAN' idx='2' />
+  	</column>
+</extract>
+
+<extract>
+	<column exact='1' name='Asin' attr='href' name2='Price' attr2='text'>
+		<webctrl tag='li' class='s-result-item  celwidget  '/>
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div'  />
+		<webctrl tag='div' />
+		<webctrl tag='a' class='a-link-normal a-text-normal' />
+  	</column>
+</extract>
+
+
+<extract>
+	<row exact="1">
+		<webctrl tag="li" />
+		<webctrl tag="div" class="s-item-container" idx="1"/>
+	</row>
+	<column exact="1" name="Url" attr="href">
+		<webctrl tag="li" />
+		<webctrl tag="div" class="s-item-container" idx="1"/>
+		<webctrl tag="div"  idx="1"/>
+		<webctrl tag="div"  idx="1"/>
+		<webctrl tag="a" idx="1"/>
+		<webctrl tag="h2"  idx="1"/>
+		<webctrl tag="font" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+	</column>
+	<column exact="1" name="Price" attr="text">
+		<webctrl tag="li" />
+		<webctrl tag="div" class="s-item-container" idx="1"/>
+		<webctrl tag="div"  idx="2"/>
+		<webctrl tag="div"  idx="1"/>
+		<webctrl tag="a"  idx="1"/>
+		<webctrl tag="span" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+	</column>
+</extract>
+
+
+<extract>
+	<row exact="1">
+		<webctrl tag="li" class="s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  "/>
+		<webctrl tag="div" class="s-item-container" idx="1"/>
+	</row>
+	<column exact="1" name="Url" attr="href">
+		<webctrl tag="li" class="s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  "/>
+		<webctrl tag="div" class="s-item-container" idx="1"/>
+		<webctrl tag="div" class="a-row a-spacing-mini" idx="1"/>
+		<webctrl tag="div" class="a-row a-spacing-none sx-line-clamp-4" idx="1"/>
+		<webctrl tag="a" class="a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal" idx="1"/>
+		<webctrl tag="h2" class="a-size-base s-inline  s-access-title  a-text-normal" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+	</column>
+	<column exact="1" name="Price" attr="text">
+		<webctrl tag="li" class="s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  "/>
+		<webctrl tag="div" class="s-item-container" idx="1"/>
+		<webctrl tag="div" class="a-row a-spacing-mini" idx="2"/>
+		<webctrl tag="div" class="a-row a-spacing-none" idx="1"/>
+		<webctrl tag="a" class="a-link-normal a-text-normal" idx="1"/>
+		<webctrl tag="span" class="a-size-base a-color-price s-price a-text-bold" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+		<webctrl tag="font" idx="1"/>
+	</column>
+</extract>
+
+<extract>
+	<column name='Asin' attr='href' exact='1' name2='Price' attr2='text'>
+		<webctrl tag='li' class='s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  '/>
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div' class='a-row a-spacing-mini' idx='2'/>
+		<webctrl tag='div' class='a-row a-spacing-none' idx='1'/>
+		<webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/>
+		<webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/>
+		<webctrl tag='font' idx='1'/>
+		<webctrl tag='font' idx='1'/>
+	</column>
+</extract>
+
+<extract>
+	<row exact='1'>
+		<webctrl tag='li' class='s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  '/>
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+	</row>
+	<column exact='1' name='Asin' attr='href'>
+		<webctrl tag='li' class='s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  '/>
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div' class='a-row a-spacing-mini' idx='1'/>
+		<webctrl tag='div' class='a-row a-spacing-none sx-line-clamp-4' idx='1'/>
+		<webctrl tag='a' class='a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal' idx='1'/>
+		<webctrl tag='h2' class='a-size-base s-inline  s-access-title  a-text-normal' idx='1'/>
+		<webctrl tag='font' idx='1'/>
+		<webctrl tag='font' idx='1'/>
+	</column>
+	<column exact='1' name='Price' attr='text'>
+		<webctrl tag='li' class='s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  '/>
+		<webctrl tag='div' class='s-item-container' idx='1'/>
+		<webctrl tag='div' class='a-row a-spacing-mini' idx='2'/>
+		<webctrl tag='div' class='a-row a-spacing-none' idx='1'/>
+		<webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/>
+		<webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/>
+		<webctrl tag='font' idx='1'/>
+		<webctrl tag='font' idx='1'/>
+	</column>
+</extract>

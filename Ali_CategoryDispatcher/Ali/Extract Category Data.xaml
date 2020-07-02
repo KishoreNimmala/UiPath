@@ -1,0 +1,119 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Extract_Category_Data"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_AliBrowser" Type="OutArgument(ui:Browser)" />
+    <x:Property Name="out_SearchData" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Extract_Category_Data_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Extract Category Data" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe AliExpress.c...'" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="51a178783e8c3d82ccf777ec8a6ae17f" Selector="&lt;html app='chrome.exe' /&gt;" UiBrowser="[out_AliBrowser]">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <ui:WaitImageAppear FoundElement="{x:Null}" ContinueOnError="True" DisplayName="Find Image 'chrome.exe'" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+              <ui:WaitImageAppear.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAfCAYAAAAbW8YEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAANRSURBVEhL7ZbNS1RhFMavM5aGf0AgVPSlJTmOJm0qSCIiqFXRIhJqEUqraB2UizZBFERfJmKL/oBw0TKihQguIlq1bO7VHMVxMDOlmafznDv37cwnjlC26IGH+857z/md9+PMqIdN0P+if1T/QNGvE8Cb08iPNAPPG9T5Z15ddnlkCEuZJfpddHYSeLUdGJWpF3FgWJKHZbwhSy4ZZJFJtpHMhsqPnwTG5ONII/BUVvpYxk/CZz2OcshQFplkG8lMQaNNyD2MIdvfgPSxOGZ645g+HBPzWY9jmksGWWSSbeWK/nzgYbYvhlRbI6Y7GxEciov53IiluDDIIpNsK/dp8VIMfrvsMClFE5KUiJ4bcZhLFplkW7miM0di4So75dkpiV1bMN3dpIBAIbXtYpgjuWQoS5hkW7miWihyl0DaPfi7PAQdXjjndlDJYR5jNUdyyYh4ZFu5okzW1Sa3wt/rYe5qH76/HcfsuQ4EBwRSVKTcjGEsc+aunFAGWdEJWJmiXJUE9GzDl1YP2SdDOp+5PQB/n6w+IcdtiljzHWMYSzGXDLKUKWyrop2qu5uR2iGAO4PI53JYGruPlBwZ70qvwBSjdU7eMYaxzGEuGWRFcVblRXm8+z2kL/Yit7KM1c+fECRbtCH0uExhHXOODSgxjGUOc8nguyjWqryoHEUg3ee3eXo/VPbRLV15kBBIMuxOtYw5x3eMoZjDXDJs81mVF+UPA++IjXE+iVw2g/zaGhbv3dQ5f0/YndrdMuYc3zGGsczhnPaA3ud6iop5bIG0PJtj/sYF5JaXNGZl6h0yQwNIXz6q5phzFGMYq03Hr1zJ/VtVLOosd5KS1k/3H8ePqfeFyHKtyDvGMNbeo7VV1aJupbxfaQp+3+avn0V2+C6+vX6p5phzfKeNo/dYvkvaquZOCQt4LwWYv1vucKcs4GBojjmn8RLD2OjHoNRWtY+3YLdyfu9oLoKOPtuYKrYyRU1SYWelrgSuWqyIUe0XqafFBc6UJdVpyVVGYUy2lSs6f+0UMmx1dp8WrH1ctS25wiCLTLKtXNG1j5NY6GvFQhf/+EaFKwHXYe5UGGSRSbaVK0qtfpjA4uAZ+R+HR10Btl5LLhlkkVmqoqJ/S5tQFPgF6RJEIaywdwYAAAAASUVORK5CYII=" />
+              </ui:WaitImageAppear.Image>
+              <ui:WaitImageAppear.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+              </ui:WaitImageAppear.Target>
+            </ui:WaitImageAppear>
+            <Delay Duration="00:00:05" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[out_SearchData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'DIV  refine-category-li...'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SearchName' attr='text' name2='SearchUrl' attr2='href'&gt;&lt;webctrl tag='div' class='list-box-and-multiple-select' idx='1'/&gt;&lt;webctrl tag='dl' class='attribute-item-multiple' idx='1'/&gt;&lt;webctrl tag='dd' class='list-box' idx='1'/&gt;&lt;webctrl tag='ul'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='a'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100">
+              <ui:ExtractData.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5b5e521d7806a31d19aa0bbda02dcf81" Selector="&lt;webctrl id='refine-category-list' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+              </ui:ExtractData.Target>
+            </ui:ExtractData>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <sads:DebugSymbol.Symbol>d19DOlxVc2Vyc1xLaXNob3JlLU5pbW1hbGFcRG9jdW1lbnRzXFVpUGF0aFxBbGlfQ2F0ZWdvcnlEaXNwYXRjaGVyXEFsaVxFeHRyYWN0IENhdGVnb3J5IERhdGEueGFtbBFEA18OAgEBRQVdFwIBAkWXAkW4AgIBE0XDAkXVAgIBEUsLWhYCAQNMDVMiAgEOVA1UVAIBDFUNWR4CAQRMSUxPAgEQTjtOQAIBD1QdVCcCAQ1VpwVVrAUCAQtXoAFX1wECAQpVgQFVhgECAQlVSVVPAgEIVVpVbAIBBlXaAVXjBAIBBQ==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="WaitImageAppear_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="ExtractData_1" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336,438">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_1" sap:VirtualizedContainerService.HintSize="414,584" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,708">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Extract_Category_Data_1" sap:VirtualizedContainerService.HintSize="476,788" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

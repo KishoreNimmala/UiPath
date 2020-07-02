@@ -1,0 +1,28 @@
+{
+  "name": "Amazon_Canada_Asing_Scrap_In_Excel",
+  "description": "Get urls from Excel file and scrap Asin Id and Price",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
+    "UiPath.UIAutomation.Activities": "[19.4.1]",
+    "UiPath.System.Activities": "[19.4.0]",
+    "UiPath.Excel.Activities": "[2.5.3]",
+    "UiPath.Mail.Activities": "[1.4.0]",
+    "System.Regex": "[1.0.0]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.3.2.0",
+  "projectVersion": "1.0.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "AmazonOrdersToExcel",
+  "description": "Amazon Orders Saved in Excel File",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Mail.Activities": "[1.3.0]",
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
+    "UiPath.Excel.Activities": "[2.5.2]",
+    "UiPath.System.Activities": "[19.3.0]",
+    "UiPath.UIAutomation.Activities": "[19.3.0]",
+    "UiPathTeam.GoogleSpreadsheet.Activities": "[1.0.2.1]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.4.2.0",
+  "projectVersion": "1.0.7097.15890",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "OrchestratorQueueName",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": []
+  }
+}

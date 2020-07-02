@@ -1,0 +1,981 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ProcessTransaction" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="io_Browser" Type="InOutArgument(ui:Browser)" />
+    <x:Property Name="in_Category" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2257.33333333333,8079.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="2217.33333333333,7999.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ProductName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Description" />
+      <Variable x:TypeArguments="x:String" Name="Image6" />
+      <Variable x:TypeArguments="x:String" Name="Image5" />
+      <Variable x:TypeArguments="x:String" Name="Image4" />
+      <Variable x:TypeArguments="x:String" Name="Image3" />
+      <Variable x:TypeArguments="x:String" Name="Image2" />
+      <Variable x:TypeArguments="x:String" Name="Image1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ImageData" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="ImgCount" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ProductDataTable" />
+      <Variable x:TypeArguments="x:String" Name="Link" />
+      <Variable x:TypeArguments="x:String" Name="Ingredients" />
+      <Variable x:TypeArguments="x:String" Name="HowTo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ColorData" />
+      <Variable x:TypeArguments="x:Boolean" Name="ColorExists" />
+      <Variable x:TypeArguments="x:String" Name="DataOut" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="ColorCount" />
+      <Variable x:TypeArguments="x:Boolean" Name="OthColExists" />
+      <Variable x:TypeArguments="sd:DataTable" Name="OtherColorData" />
+      <Variable x:TypeArguments="x:String" Name="OutPut" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[ProductDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="2195.33333333333,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Category&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Link&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Type&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;How_x0020_To&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ingredients&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image4&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image5&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image6&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap:VirtualizedContainerService.HintSize="2195.33333333333,62" sap2010:WorkflowViewState.IdRef="Assign_37">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ProductName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_TransactionItem(0).ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="2195.33333333333,62" sap2010:WorkflowViewState.IdRef="Assign_38">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Link]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+in_TransactionItem(1).ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:NavigateTo Browser="[io_Browser]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="2195.33333333333,58.6666666666667" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[Link]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Voluminous'" sap:VirtualizedContainerService.HintSize="2195.33333333333,6927.33333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="5b9966f592348039898b4191f0ce9664" Selector="&lt;html app='chrome.exe' title='*Oréal P*' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2181.33333333333,6781.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetValue ContinueOnError="True" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="2159.33333333333,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="41f2a7524d2b927f64bd414d72c59d89" Selector="&lt;webctrl parentid='mainform' tag='DIV' class='tab-content description' parentclass='tab-content-container' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Description]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'LI'" sap:VirtualizedContainerService.HintSize="2159.33333333333,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="031853c066521b411809f5f2d455ca14" Selector="&lt;webctrl isleaf='1' parentid='mainform' tag='LI' aaname='How To' class='tab' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:GetValue ContinueOnError="False" DisplayName="Get Text 'P'" sap:VirtualizedContainerService.HintSize="2159.33333333333,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9d6776085e55112204fa5ff0c681e747" Selector="&lt;webctrl parentid='mainform' tag='DIV' class='tab-content how-to' parentclass='tab-content-container' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[HowTo]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'LI'" sap:VirtualizedContainerService.HintSize="2159.33333333333,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8d98ea468f7f002d3d26a607822c0c1a" Selector="&lt;webctrl parentid='mainform' tag='LI' aaname='*Ingredients*' class='tab' innertext='*Ingredients*' parentclass='tab-toggle' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:GetValue ContinueOnError="False" DisplayName="Get Text 'P'" sap:VirtualizedContainerService.HintSize="2159.33333333333,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="42a5a0988a2ea15eaf53c380b5fc2bca" Selector="&lt;webctrl parentid='mainform' tag='P' class='tab-content-text' parentclass='tab-content*how-to*' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[Ingredients]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:UiElementExists DisplayName="Element Exists" Exists="[ColorExists]" sap:VirtualizedContainerService.HintSize="2159.33333333333,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl tag='UL' class='palette-colors clearfix' parentclass='box box-palettes mini-swatch color-swatch' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[ColorExists]" sap:VirtualizedContainerService.HintSize="2159.33333333333,5819.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="644.666666666667,2753.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="622.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Colors exists" />
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="622.666666666667,308.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Color' attr='data-item-id'&gt;&lt;webctrl tag='div' class='new-pdp new-subcategory-page infallible makeup-color  in-stock' idx='1'/&gt;&lt;webctrl tag='div' class='main-new-pdp-container' idx='1'/&gt;&lt;webctrl tag='div' class='container new-pdp-container' idx='1'/&gt;&lt;webctrl tag='div' class='box box-palettes mini-swatch color-swatch' idx='1'/&gt;&lt;webctrl tag='ul' class='palette-colors clearfix' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ExtractData_4" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0bcd155bd550d88b26ed527bb9d754fd" Selector="&lt;webctrl id='mainform' tag='FORM' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Color' attr='data-item-id'&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="622.666666666667,106" sap2010:WorkflowViewState.IdRef="ExtractData_9" MaxNumberOfResults="100">
+                    <ui:ExtractData.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0bcd155bd550d88b26ed527bb9d754fd" Selector="&lt;webctrl parentid='mainform' tag='UL' class='palette-colors clearfix' parentclass='box box-palettes mini-swatch color-swatch' /&gt;" WaitForReady="COMPLETE" />
+                    </ui:ExtractData.Target>
+                  </ui:ExtractData>
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ColorData]" DisplayName="Color Data For Each Row" sap:VirtualizedContainerService.HintSize="622.666666666667,2032" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1882.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="ColorName" />
+                            <Variable x:TypeArguments="x:String" Name="ClickSelector" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[ColorName]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[row(0).ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="570,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[ColorName]" />
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="570,1452" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                            <TryCatch.Try>
+                              <Sequence sap:VirtualizedContainerService.HintSize="551.333333333333,1214" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="ItemName" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="12ec1da4483a342141ebc4daf3e16ec2" Selector="[&quot;&lt;webctrl parentid='mainform' tag='UL' class='palette-colors clearfix' parentclass='box box-palettes mini-swatch color-swatch' /&gt;&lt;webctrl tag='LI' class='palette-color*' parentclass='palette-colors clearfix' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <Assign sap:VirtualizedContainerService.HintSize="529.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[ProductName+" ( Color: "+ColorName+ " )"]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ProductLink' attr='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='img'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="100">
+                                  <ui:ExtractData.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="221f10e9a5979ea5d8dbc2ed3affba14" Selector="&lt;webctrl parentid='mainform' tag='UL' class='product-thumbnails*' parentclass='product-image-container' /&gt;" WaitForReady="COMPLETE" />
+                                  </ui:ExtractData.Target>
+                                </ui:ExtractData>
+                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="529.333333333333,634" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498.666666666667,484.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[ImgCount]" sap:VirtualizedContainerService.HintSize="476.666666666667,258.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                                          <Assign x:Key="0" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign x:Key="1" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign x:Key="2" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign x:Key="3" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign x:Key="4" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign x:Key="5" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image6]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Switch>
+                                        <Assign sap:VirtualizedContainerService.HintSize="476.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Int32">[ImgCount]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Int32">[ImgCount+1]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Category,ItemName,Link,in_TransactionItem(2).ToString,in_TransactionItem(3).ToString,Description,HowTo,Ingredients,Image1,Image2,Image3,Image4,Image5,Image6}]" DataTable="[ProductDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.333333333333,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                              </Sequence>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="556,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <Assign sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_34">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[ColorCount]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[ColorCount+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="1488.66666666667,5668.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists 'chrome.exe'" Exists="[OthColExists]" sap:VirtualizedContainerService.HintSize="1466.66666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4ab63752118170ececf3c9a4bb12473b" Selector="&lt;webctrl parentid='mainform' tag='UL' class='grouped-palette-colors' isleaf='0' parentclass='grouped-container*' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[OthColExists]" sap:VirtualizedContainerService.HintSize="1466.66666666667,5398.66666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="889.333333333333,5248" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="867.333333333333,5124" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Other Color Sequence" sap:VirtualizedContainerService.HintSize="848.666666666667,4886" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[OtherColorData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='ul' class='grouped-palette-colors' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/row&gt;&lt;column exact='1' name='Name' attr='text'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' class='color-description' idx='1'/&gt;&lt;webctrl tag='span' class='color-title' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Color list' attr='text'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' class='color-description' idx='1'/&gt;&lt;webctrl tag='span' class='color-number' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Group' attr='data-group'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' class='color-description' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="826.666666666667,106" sap2010:WorkflowViewState.IdRef="ExtractData_16" MaxNumberOfResults="100">
+                                <ui:ExtractData.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cd8efef788e031b444cd77d7cc3f817a" Selector="&lt;webctrl parentid='mainform' tag='DIV' class='grouped-container*' parentclass='box box-palettes*' /&gt;" WaitForReady="COMPLETE" />
+                                </ui:ExtractData.Target>
+                              </ui:ExtractData>
+                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[OtherColorData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="826.666666666667,3356.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_11">
+                                <ui:ForEachRow.Body>
+                                  <ActivityAction x:TypeArguments="sd:DataRow">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="796,3207.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="774,2981.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If Condition="[Convert.ToInt32(row(1).ToString.Replace(&quot;(&quot;,&quot;&quot;).Replace(&quot;)&quot;,&quot;&quot;).Trim) &gt;0]" sap:VirtualizedContainerService.HintSize="752,2857.33333333333" sap2010:WorkflowViewState.IdRef="If_4">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="626,2706.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Sequence DisplayName="Color Sequence" sap:VirtualizedContainerService.HintSize="604,2582.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                <Sequence.Variables>
+                                                  <Variable x:TypeArguments="x:String" Name="ColorListSelector" />
+                                                  <Variable x:TypeArguments="sd:DataTable" Name="InnerColorData" />
+                                                  <Variable x:TypeArguments="x:Int32" Default="1" Name="InnerCount" />
+                                                  <Variable x:TypeArguments="x:String" Name="GroupName" />
+                                                </Sequence.Variables>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="582,62" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[ColorListSelector]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[row(2).ToString]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="582,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                  <ui:Click.CursorPosition>
+                                                    <ui:CursorPosition Position="Center">
+                                                      <ui:CursorPosition.OffsetX>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:CursorPosition.OffsetX>
+                                                      <ui:CursorPosition.OffsetY>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:CursorPosition.OffsetY>
+                                                    </ui:CursorPosition>
+                                                  </ui:Click.CursorPosition>
+                                                  <ui:Click.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="53e282ab6f88cbb41670fafd962fb6e2" Selector="[&quot;&lt;webctrl parentid='mainform' tag='UL' class='grouped-palette-colors' parentclass='grouped-container*' /&gt;&lt;webctrl parentid='mainform' tag='LI' class='palette-color*' parentclass='grouped-palette-colors'  idx='&quot;+ColorCount.ToString+&quot;'/&gt;&quot;]" WaitForReady="INTERACTIVE" />
+                                                  </ui:Click.Target>
+                                                </ui:Click>
+                                                <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[InnerColorData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='InnerColor' attr='text'&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="582,106" sap2010:WorkflowViewState.IdRef="ExtractData_17" MaxNumberOfResults="100">
+                                                  <ui:ExtractData.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="03ba1b6cda0af82cbe6f415d7e34a331" Selector="[&quot;&lt;webctrl id='mainform' tag='FORM' /&gt;&lt;webctrl parentid='mainform' tag='UL' class='grouped-hairs grouped-hair-*&quot;+ColorListSelector+&quot;*' isleaf='0' parentclass='grouped-container*' /&gt;&quot;]" WaitForReady="COMPLETE" />
+                                                  </ui:ExtractData.Target>
+                                                </ui:ExtractData>
+                                                <Assign sap:VirtualizedContainerService.HintSize="582,62" sap2010:WorkflowViewState.IdRef="Assign_68">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[GroupName]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[row(0).ToString]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="582,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;Group Name: &quot;+GroupName]" />
+                                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[InnerColorData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="582,1860" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+                                                  <ui:ForEachRow.Body>
+                                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                                      <ActivityAction.Argument>
+                                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                                      </ActivityAction.Argument>
+                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="551.333333333333,1710.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="x:String" Name="ColorName" />
+                                                          <Variable x:TypeArguments="x:String" Name="itemName" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                          <ui:Click.CursorPosition>
+                                                            <ui:CursorPosition Position="Center">
+                                                              <ui:CursorPosition.OffsetX>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:CursorPosition.OffsetX>
+                                                              <ui:CursorPosition.OffsetY>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:CursorPosition.OffsetY>
+                                                            </ui:CursorPosition>
+                                                          </ui:Click.CursorPosition>
+                                                          <ui:Click.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="53e282ab6f88cbb41670fafd962fb6e2" Selector="[&quot;&lt;webctrl parentid='mainform' tag='UL' class='grouped-palette-colors' parentclass='grouped-container selected' /&gt;&lt;webctrl parentid='mainform' tag='LI' class='palette-color*&quot;+ColorListSelector+&quot;*' parentclass='grouped-palette-colors' idx='1' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+                                                          </ui:Click.Target>
+                                                        </ui:Click>
+                                                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                          <ui:Click.CursorPosition>
+                                                            <ui:CursorPosition Position="Center">
+                                                              <ui:CursorPosition.OffsetX>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:CursorPosition.OffsetX>
+                                                              <ui:CursorPosition.OffsetY>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:CursorPosition.OffsetY>
+                                                            </ui:CursorPosition>
+                                                          </ui:Click.CursorPosition>
+                                                          <ui:Click.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="53e282ab6f88cbb41670fafd962fb6e2" Selector="[&quot;&lt;webctrl id='mainform' tag='FORM' /&gt;&lt;webctrl parentid='mainform' tag='UL' class='grouped-hairs grouped-hair-*&quot;+ColorListSelector+&quot;*' isleaf='0' parentclass='grouped-container*' /&gt;&lt;webctrl tag='LI' idx='&quot;+InnerCount.ToString+&quot;' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+                                                          </ui:Click.Target>
+                                                        </ui:Click>
+                                                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[InnerCount.ToString]" />
+                                                        <Assign sap:VirtualizedContainerService.HintSize="529.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_51">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:Int32">[InnerCount]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:Int32">[InnerCount+1]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                                                          <ui:GetValue.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a3da9acc4f13fc8f8fed3399eb199b06" Selector="&lt;webctrl parentid='mainform' tag='DIV' class='palette-select' parentclass='palette-selector' /&gt;&lt;webctrl parentid='mainform' tag='SPAN' class='palette-title*' parentclass='palette-select' /&gt;" WaitForReady="INTERACTIVE" />
+                                                          </ui:GetValue.Target>
+                                                          <ui:GetValue.Value>
+                                                            <OutArgument x:TypeArguments="x:String">[ColorName]</OutArgument>
+                                                          </ui:GetValue.Value>
+                                                        </ui:GetValue>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="529.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_60">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[ProductName+" ( Group: "+GroupName+", Color: "+ColorName+ " )"]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ProductLink' attr='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='img'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_19" MaxNumberOfResults="100">
+                                                          <ui:ExtractData.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="221f10e9a5979ea5d8dbc2ed3affba14" Selector="&lt;webctrl parentid='mainform' tag='UL' class='product-thumbnails*' parentclass='product-image-container' /&gt;" WaitForReady="COMPLETE" />
+                                                          </ui:ExtractData.Target>
+                                                        </ui:ExtractData>
+                                                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="529.333333333333,634" sap2010:WorkflowViewState.IdRef="ForEachRow_13">
+                                                          <ui:ForEachRow.Body>
+                                                            <ActivityAction x:TypeArguments="sd:DataRow">
+                                                              <ActivityAction.Argument>
+                                                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                                              </ActivityAction.Argument>
+                                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498.666666666667,484.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[ImgCount]" sap:VirtualizedContainerService.HintSize="476.666666666667,258.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_7">
+                                                                  <Assign x:Key="0" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                  <Assign x:Key="1" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                  <Assign x:Key="2" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                  <Assign x:Key="3" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_64">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                  <Assign x:Key="4" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_65">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                  <Assign x:Key="5" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_66">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[Image6]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                </Switch>
+                                                                <Assign sap:VirtualizedContainerService.HintSize="476.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_67">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Int32">[ImgCount]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Int32">[ImgCount+1]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </ui:ForEachRow.Body>
+                                                        </ui:ForEachRow>
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Category,ProductName,Link,in_TransactionItem(2).ToString,in_TransactionItem(3).ToString,Description,HowTo,Ingredients,Image1,Image2,Image3,Image4,Image5,Image6}]" DataTable="[ProductDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.333333333333,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+                                                      </Sequence>
+                                                    </ActivityAction>
+                                                  </ui:ForEachRow.Body>
+                                                </ui:ForEachRow>
+                                              </Sequence>
+                                            </Sequence>
+                                          </If.Then>
+                                        </If>
+                                      </Sequence>
+                                      <Assign sap:VirtualizedContainerService.HintSize="774,62" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[ColorCount]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[ColorCount+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEachRow.Body>
+                              </ui:ForEachRow>
+                              <If Condition="[ColorCount=1]" sap:VirtualizedContainerService.HintSize="826.666666666667,1219.33333333333" sap2010:WorkflowViewState.IdRef="If_5">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="551.333333333333,1068.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="Colors does not exists" />
+                                    <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ProductLink' attr='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='img'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_20" MaxNumberOfResults="100">
+                                      <ui:ExtractData.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="221f10e9a5979ea5d8dbc2ed3affba14" Selector="&lt;webctrl parentid='mainform' tag='UL' class='product-thumbnails*' parentclass='product-image-container' /&gt;" WaitForReady="COMPLETE" />
+                                      </ui:ExtractData.Target>
+                                    </ui:ExtractData>
+                                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="529.333333333333,634" sap2010:WorkflowViewState.IdRef="ForEachRow_14">
+                                      <ui:ForEachRow.Body>
+                                        <ActivityAction x:TypeArguments="sd:DataRow">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498.666666666667,484.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[ImgCount]" sap:VirtualizedContainerService.HintSize="476.666666666667,258.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_8">
+                                              <Assign x:Key="0" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign x:Key="1" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_70">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign x:Key="2" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_71">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign x:Key="3" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_72">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign x:Key="4" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_73">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign x:Key="5" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_74">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Image6]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Switch>
+                                            <Assign sap:VirtualizedContainerService.HintSize="476.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_75">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[ImgCount]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">[ImgCount+1]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:ForEachRow.Body>
+                                    </ui:ForEachRow>
+                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Category,ProductName,Link,in_TransactionItem(2).ToString,in_TransactionItem(3).ToString,Description,HowTo,Ingredients,Image1,Image2,Image3,Image4,Image5,Image6}]" DataTable="[ProductDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.333333333333,22" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="853.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="551.333333333333,1068.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="Error In selecting multiple colors" />
+                                  <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ProductLink' attr='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='img'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_18" MaxNumberOfResults="100">
+                                    <ui:ExtractData.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="221f10e9a5979ea5d8dbc2ed3affba14" Selector="&lt;webctrl parentid='mainform' tag='UL' class='product-thumbnails*' parentclass='product-image-container' /&gt;" WaitForReady="COMPLETE" />
+                                    </ui:ExtractData.Target>
+                                  </ui:ExtractData>
+                                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="529.333333333333,634" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
+                                    <ui:ForEachRow.Body>
+                                      <ActivityAction x:TypeArguments="sd:DataRow">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498.666666666667,484.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[ImgCount]" sap:VirtualizedContainerService.HintSize="476.666666666667,258.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+                                            <Assign x:Key="0" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign x:Key="1" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign x:Key="2" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_55">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign x:Key="3" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_56">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign x:Key="4" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign x:Key="5" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_58">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[Image6]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Switch>
+                                          <Assign sap:VirtualizedContainerService.HintSize="476.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_59">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[ImgCount]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[ImgCount+1]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:ForEachRow.Body>
+                                  </ui:ForEachRow>
+                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Category,ProductName,Link,in_TransactionItem(2).ToString,in_TransactionItem(3).ToString,Description,HowTo,Ingredients,Image1,Image2,Image3,Image4,Image5,Image6}]" DataTable="[ProductDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.333333333333,22" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="551.333333333333,1068.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="Colors does not exists" />
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'FORM  mainform'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ProductLink' attr='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='img'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="529.333333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_10" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="221f10e9a5979ea5d8dbc2ed3affba14" Selector="&lt;webctrl parentid='mainform' tag='UL' class='product-thumbnails*' parentclass='product-image-container' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="529.333333333333,634" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="498.666666666667,484.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[ImgCount]" sap:VirtualizedContainerService.HintSize="476.666666666667,258.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+                                  <Assign x:Key="0" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign x:Key="1" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_40">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign x:Key="2" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign x:Key="3" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_42">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign x:Key="4" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign x:Key="5" sap:VirtualizedContainerService.HintSize="242,62" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Image6]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["https://www.lorealparisusa.com"+row(0).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Switch>
+                                <Assign sap:VirtualizedContainerService.HintSize="476.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_45">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[ImgCount]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[ImgCount+1]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                        </ui:ForEachRow>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_Category,ProductName,Link,in_TransactionItem(2).ToString,in_TransactionItem(3).ToString,Description,HowTo,Ingredients,Image1,Image2,Image3,Image4,Image5,Image6}]" DataTable="[ProductDataTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="529.333333333333,22" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2195.33333333333,323.333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,244.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_47">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:OutputDataTable DataTable="[ProductDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[OutPut]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[OutPut]" TopMost="True" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:AppendRange DataTable="[ProductDataTable]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="2195.33333333333,114.666666666667" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="[&quot;ProductData\&quot;+in_Category+&quot;.xlsx&quot;]" />
+  </Sequence>
+</Activity>

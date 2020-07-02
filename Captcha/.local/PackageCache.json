@@ -1,0 +1,2146 @@
+{
+  "Packages": [
+    {
+      "Package": {
+        "Id": "UiPath.Excel.Activities",
+        "Version": "2.8.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\closedxml/0.87.1\\lib/net40/ClosedXML.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\documentformat.openxml/2.5.0\\lib/DocumentFormat.OpenXml.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.visualstudio.ole.interop/7.10.6071\\lib/Microsoft.VisualStudio.OLE.Interop.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OOXML.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXml4Net.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXmlFormats.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\sharpziplib/1.0.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.excel.activities/2.8.0-preview\\lib/net461/UiPath.Excel.Activities.Design.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.excel.activities/2.8.0-preview\\lib/net461/UiPath.Excel.Activities.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.excel.activities/2.8.0-preview\\lib/net461/UiPath.Excel.dll"
+      ],
+      "Path": "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.excel.activities/2.8.0-preview"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Mail.Activities",
+        "Version": "1.8.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\bouncycastle/1.8.5\\lib/BouncyCastle.Crypto.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\interop.domino.dll/1.0.0\\lib/Interop.Domino.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.Auth.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.mail.activities/1.8.0-preview\\lib/net461/MailKit.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.mail.activities/1.8.0-preview\\lib/net461/MimeKit.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.mail.activities/1.8.0-preview\\lib/net461/UiPath.Mail.Activities.Design.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.mail.activities/1.8.0-preview\\lib/net461/UiPath.Mail.Activities.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.mail.activities/1.8.0-preview\\lib/net461/UiPath.Mail.dll"
+      ],
+      "Path": "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.mail.activities/1.8.0-preview"
+    },
+    {
+      "Package": {
+        "Id": "CAPTCHA.asp.net.core.on.legacy.net.frameworks",
+        "Version": "4.4.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\captcha.asp.net.core.on.legacy.net.frameworks/4.4.2\\lib/net46/BotDetect.Web.Mvc.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\captcha.asp.net.core.on.legacy.net.frameworks/4.4.2\\lib/net46/BotDetect.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.antiforgery/1.0.0\\lib/net451/Microsoft.AspNetCore.Antiforgery.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.authorization/1.0.0\\lib/net451/Microsoft.AspNetCore.Authorization.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.cors/1.0.0\\lib/net451/Microsoft.AspNetCore.Cors.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal/1.0.0\\lib/net451/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.dataprotection/1.0.0\\lib/net451/Microsoft.AspNetCore.DataProtection.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions/1.0.0\\lib/net451/Microsoft.AspNetCore.DataProtection.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions/1.0.0\\lib/net451/Microsoft.AspNetCore.Hosting.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions/1.0.0\\lib/net451/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.AspNetCore.Html.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.http/1.0.0\\lib/net451/Microsoft.AspNetCore.Http.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions/1.0.0\\lib/net451/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.http.extensions/1.0.0\\lib/net451/Microsoft.AspNetCore.Http.Extensions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.http.features/1.0.0\\lib/net451/Microsoft.AspNetCore.Http.Features.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch/1.0.0\\lib/netstandard1.1/Microsoft.AspNetCore.JsonPatch.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.localization/1.0.0\\lib/net451/Microsoft.AspNetCore.Localization.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.apiexplorer/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.ApiExplorer.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.core/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Core.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.cors/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Cors.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.dataannotations/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.DataAnnotations.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.formatters.json/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Formatters.Json.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.localization/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Localization.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Razor.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.host/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.Razor.Host.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.taghelpers/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.TagHelpers.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.mvc.viewfeatures/1.0.0\\lib/net451/Microsoft.AspNetCore.Mvc.ViewFeatures.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.razor/1.0.0\\lib/net451/Microsoft.AspNetCore.Razor.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime/1.0.0\\lib/net451/Microsoft.AspNetCore.Razor.Runtime.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.routing/1.0.0\\lib/net451/Microsoft.AspNetCore.Routing.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions/1.0.0\\lib/net451/Microsoft.AspNetCore.Routing.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.session/1.0.0\\lib/net451/Microsoft.AspNetCore.Session.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnetcore.webutilities/1.0.0\\lib/net451/Microsoft.AspNetCore.WebUtilities.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.codeanalysis.common/1.3.0\\lib/net45/Microsoft.CodeAnalysis.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.codeanalysis.csharp/1.3.0\\lib/net45/Microsoft.CodeAnalysis.CSharp.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.dotnet.internalabstractions/1.0.0\\lib/net451/Microsoft.DotNet.InternalAbstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.caching.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.caching.memory/1.0.0\\lib/net451/Microsoft.Extensions.Caching.Memory.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.configuration/1.0.0\\lib/netstandard1.1/Microsoft.Extensions.Configuration.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.configuration.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.configuration.binder/1.0.0\\lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.dependencyinjection/1.0.0\\lib/netstandard1.1/Microsoft.Extensions.DependencyInjection.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.dependencymodel/1.0.0\\lib/net451/Microsoft.Extensions.DependencyModel.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.fileproviders.composite/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.fileproviders.physical/1.0.0\\lib/net451/Microsoft.Extensions.FileProviders.Physical.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.filesystemglobbing/1.0.0\\lib/net451/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.globalization.cultureinfocache/1.0.0\\lib/netstandard1.1/Microsoft.Extensions.Globalization.CultureInfoCache.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.localization/1.0.0\\lib/net451/Microsoft.Extensions.Localization.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.localization.abstractions/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.Localization.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.logging.abstractions/1.0.0\\lib/netstandard1.1/Microsoft.Extensions.Logging.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.objectpool/1.0.0\\lib/net451/Microsoft.Extensions.ObjectPool.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.options/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.Options.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.platformabstractions/1.0.0\\lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.primitives/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.Primitives.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.extensions.webencoders/1.0.0\\lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.net.http.headers/1.0.0\\lib/netstandard1.1/Microsoft.Net.Http.Headers.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\newtonsoft.json/12.0.3\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.appcontext/4.1.0\\lib/net46/System.AppContext.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.buffers/4.0.0\\lib/netstandard1.1/System.Buffers.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.collections.immutable/1.2.0\\lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.componentmodel.primitives/4.1.0\\lib/net45/System.ComponentModel.Primitives.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.componentmodel.typeconverter/4.1.0\\lib/net45/System.ComponentModel.TypeConverter.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.console/4.0.0\\lib/net46/System.Console.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.data.sqlite.core/1.0.109.2\\lib/net46/System.Data.SQLite.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.diagnostics.diagnosticsource/4.0.0\\lib/net46/System.Diagnostics.DiagnosticSource.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.diagnostics.fileversioninfo/4.0.0\\lib/net46/System.Diagnostics.FileVersionInfo.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.diagnostics.stacktrace/4.0.1\\lib/net46/System.Diagnostics.StackTrace.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.io.filesystem/4.0.1\\lib/net46/System.IO.FileSystem.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.io.filesystem.primitives/4.0.1\\lib/net46/System.IO.FileSystem.Primitives.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.reflection.metadata/1.3.0\\lib/portable-net45+win8/System.Reflection.Metadata.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.runtime.serialization.primitives/4.1.1\\lib/net46/System.Runtime.Serialization.Primitives.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.security.cryptography.algorithms/4.2.0\\lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.security.cryptography.encoding/4.0.0\\lib/net46/System.Security.Cryptography.Encoding.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.security.cryptography.primitives/4.0.0\\lib/net46/System.Security.Cryptography.Primitives.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.security.cryptography.x509certificates/4.1.0\\lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.text.encoding.codepages/4.0.1\\lib/net46/System.Text.Encoding.CodePages.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.text.encodings.web/4.0.0\\lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.threading.thread/4.0.0\\lib/net46/System.Threading.Thread.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.xml.xmldocument/4.0.1\\lib/net46/System.Xml.XmlDocument.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.xml.xpath/4.0.1\\lib/net46/System.Xml.XPath.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.xml.xpath.xdocument/4.0.1\\lib/net46/System.Xml.XPath.XDocument.dll"
+      ],
+      "Path": "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\captcha.asp.net.core.on.legacy.net.frameworks/4.4.2"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.UIAutomation.Activities",
+        "Version": "20.3.0-alpha"
+      },
+      "Assemblies": [
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\avalonedit/5.0.3\\lib/Net40/ICSharpCode.AvalonEdit.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.DataGrid.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.Toolkit.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\humanizer.core/2.4.2\\lib/netstandard2.0/Humanizer.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\newtonsoft.json/12.0.3\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath/20.4.7369.30616-alpha\\lib/UiPath.Interop.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.ocr.contracts/2.5.0-preview\\lib/net45/UiPath.OCR.Contracts.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.DataGrid.Contrib.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Docking.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Editors.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Text.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/ActiproSoftware.Wizard.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/UiPath.CV.Activities.Design.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/UiPath.CV.Activities.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/UiPath.CV.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/UiPath.UIAutomation.Activities.Design.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/UiPath.UiAutomation.Activities.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha\\lib/net461/UiPath.Wizards.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.AzureComputerVision.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.Core.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.GoogleCloud.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.Microsoft.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.MicrosoftCloud.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.vision/2.0.2-preview\\lib/net452/UiPath.Vision.Tesseract.dll"
+      ],
+      "Path": "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.uiautomation.activities/20.3.0-alpha"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.System.Activities",
+        "Version": "20.3.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.aspnet.signalr.client/2.4.0\\lib/net45/Microsoft.AspNet.SignalR.Client.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.20\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\newtonsoft.json/12.0.3\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Docking.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Text.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/ActiproSoftware.Wizard.Wpf.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/UiPath.OrchestratorClient.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/UiPath.System.Activities.Design.dll",
+        "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview\\lib/net461/UiPath.System.Activities.dll"
+      ],
+      "Path": "C:\\Users\\Kishore Nimmala\\.nuget\\packages\\uipath.system.activities/20.3.0-preview"
+    }
+  ],
+  "Conflicts": [],
+  "ResolvedDependencies": {
+    "AvalonEdit": {
+      "Id": "AvalonEdit",
+      "Version": "5.0.3",
+      "Dependencies": []
+    },
+    "BouncyCastle": {
+      "Id": "BouncyCastle",
+      "Version": "1.8.5",
+      "Dependencies": []
+    },
+    "CAPTCHA.asp.net.core.on.legacy.net.frameworks": {
+      "Id": "CAPTCHA.asp.net.core.on.legacy.net.frameworks",
+      "Version": "4.4.2",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Extensions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Session",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Caching.Memory",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Binder",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.PlatformAbstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[9.0.1, )"
+        },
+        {
+          "Item1": "System.Data.SQLite.Core",
+          "Item2": "[1.0.109.2, )"
+        }
+      ]
+    },
+    "ClosedXML": {
+      "Id": "ClosedXML",
+      "Version": "0.87.1",
+      "Dependencies": [
+        {
+          "Item1": "DocumentFormat.OpenXml",
+          "Item2": "[2.5.0, )"
+        }
+      ]
+    },
+    "CsvHelper": {
+      "Id": "CsvHelper",
+      "Version": "2.13.5",
+      "Dependencies": []
+    },
+    "DocumentFormat.OpenXml": {
+      "Id": "DocumentFormat.OpenXml",
+      "Version": "2.5.0",
+      "Dependencies": []
+    },
+    "Extended.Wpf.Toolkit": {
+      "Id": "Extended.Wpf.Toolkit",
+      "Version": "2.8.0",
+      "Dependencies": []
+    },
+    "Humanizer.Core": {
+      "Id": "Humanizer.Core",
+      "Version": "2.4.2",
+      "Dependencies": []
+    },
+    "interop.domino.dll": {
+      "Id": "interop.domino.dll",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.AspNet.SignalR.Client": {
+      "Id": "Microsoft.AspNet.SignalR.Client",
+      "Version": "2.4.0",
+      "Dependencies": [
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[6.0.4, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Antiforgery": {
+      "Id": "Microsoft.AspNetCore.Antiforgery",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.DataProtection",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.WebUtilities",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.ObjectPool",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Authorization": {
+      "Id": "Microsoft.AspNetCore.Authorization",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Cors": {
+      "Id": "Microsoft.AspNetCore.Cors",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Extensions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal": {
+      "Id": "Microsoft.AspNetCore.Cryptography.Internal",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.AspNetCore.DataProtection": {
+      "Id": "Microsoft.AspNetCore.DataProtection",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Cryptography.Internal",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.DataProtection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Hosting.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.DataProtection.Abstractions": {
+      "Id": "Microsoft.AspNetCore.DataProtection.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.AspNetCore.Diagnostics.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Diagnostics.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Hosting.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Hosting.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Hosting.Server.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Hosting.Server.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Hosting.Server.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Features",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Abstractions",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Html.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Html.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Text.Encodings.Web",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http": {
+      "Id": "Microsoft.AspNetCore.Http",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.WebUtilities",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.ObjectPool",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Net.Http.Headers",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Http.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Features",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "System.Text.Encodings.Web",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Extensions": {
+      "Id": "Microsoft.AspNetCore.Http.Extensions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Net.Http.Headers",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features": {
+      "Id": "Microsoft.AspNetCore.Http.Features",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.JsonPatch": {
+      "Id": "Microsoft.AspNetCore.JsonPatch",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.CSharp",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Collections.Concurrent",
+          "Item2": "[4.0.12, )"
+        },
+        {
+          "Item1": "System.ComponentModel.TypeConverter",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Reflection.Extensions",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Serialization.Primitives",
+          "Item2": "[4.1.1, )"
+        },
+        {
+          "Item1": "System.Text.Encoding.Extensions",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[9.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Localization": {
+      "Id": "Microsoft.AspNetCore.Localization",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Extensions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Globalization.CultureInfoCache",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Localization.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc": {
+      "Id": "Microsoft.AspNetCore.Mvc",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.ApiExplorer",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Cors",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Localization",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Razor",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.TagHelpers",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Caching.Memory",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Mvc.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Routing.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Net.Http.Headers",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.ApiExplorer": {
+      "Id": "Microsoft.AspNetCore.Mvc.ApiExplorer",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Core",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Core": {
+      "Id": "Microsoft.AspNetCore.Mvc.Core",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Authorization",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Hosting.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Http",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Routing",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyModel",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.PlatformAbstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.0.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.DiagnosticSource",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Cors": {
+      "Id": "Microsoft.AspNetCore.Mvc.Cors",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Cors",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Core",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+      "Id": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Core",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Localization",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": {
+      "Id": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.JsonPatch",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Core",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Localization": {
+      "Id": "Microsoft.AspNetCore.Mvc.Localization",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Localization",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Razor",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Localization",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Razor": {
+      "Id": "Microsoft.AspNetCore.Mvc.Razor",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Razor.Host",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.CodeAnalysis.CSharp",
+          "Item2": "[1.3.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Composite",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.Host": {
+      "Id": "Microsoft.AspNetCore.Mvc.Razor.Host",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Razor.Runtime",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Caching.Memory",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Physical",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.TagHelpers": {
+      "Id": "Microsoft.AspNetCore.Mvc.TagHelpers",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Razor",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Caching.Memory",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileSystemGlobbing",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+      "Id": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Antiforgery",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Diagnostics.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Html.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Core",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.WebEncoders",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[9.0.1, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Razor": {
+      "Id": "Microsoft.AspNetCore.Razor",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.AspNetCore.Razor.Runtime": {
+      "Id": "Microsoft.AspNetCore.Razor.Runtime",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Html.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Razor",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Routing": {
+      "Id": "Microsoft.AspNetCore.Routing",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Extensions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Routing.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.ObjectPool",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Routing.Abstractions": {
+      "Id": "Microsoft.AspNetCore.Routing.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Abstractions",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.Session": {
+      "Id": "Microsoft.AspNetCore.Session",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.DataProtection",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.AspNetCore.Http.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Caching.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Logging.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.AspNetCore.WebUtilities": {
+      "Id": "Microsoft.AspNetCore.WebUtilities",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.0.0, )"
+        },
+        {
+          "Item1": "System.Text.Encodings.Web",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.CodeAnalysis.Analyzers": {
+      "Id": "Microsoft.CodeAnalysis.Analyzers",
+      "Version": "1.1.0",
+      "Dependencies": []
+    },
+    "Microsoft.CodeAnalysis.Common": {
+      "Id": "Microsoft.CodeAnalysis.Common",
+      "Version": "1.3.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.CodeAnalysis.Analyzers",
+          "Item2": "[1.1.0, )"
+        },
+        {
+          "Item1": "System.AppContext",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Collections.Concurrent",
+          "Item2": "[4.0.12, )"
+        },
+        {
+          "Item1": "System.Collections.Immutable",
+          "Item2": "[1.2.0, )"
+        },
+        {
+          "Item1": "System.Console",
+          "Item2": "[4.0.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Diagnostics.FileVersionInfo",
+          "Item2": "[4.0.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.StackTrace",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Tools",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Dynamic.Runtime",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.IO.FileSystem",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.IO.FileSystem.Primitives",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Linq.Expressions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Reflection",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Reflection.Metadata",
+          "Item2": "[1.3.0, )"
+        },
+        {
+          "Item1": "System.Reflection.Primitives",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Handles",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime.InteropServices",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Numerics",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Algorithms",
+          "Item2": "[4.2.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Encoding",
+          "Item2": "[4.0.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.X509Certificates",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Text.Encoding",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Text.Encoding.CodePages",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Text.Encoding.Extensions",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Threading",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks.Parallel",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Threading.Thread",
+          "Item2": "[4.0.0, )"
+        },
+        {
+          "Item1": "System.Xml.ReaderWriter",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Xml.XDocument",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Xml.XmlDocument",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Xml.XPath.XDocument",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp": {
+      "Id": "Microsoft.CodeAnalysis.CSharp",
+      "Version": "1.3.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.CodeAnalysis.Common",
+          "Item2": "[1.3.0, 1.3.0]"
+        }
+      ]
+    },
+    "Microsoft.CSharp": {
+      "Id": "Microsoft.CSharp",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "Microsoft.DotNet.InternalAbstractions": {
+      "Id": "Microsoft.DotNet.InternalAbstractions",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.Exchange.WebServices": {
+      "Id": "Microsoft.Exchange.WebServices",
+      "Version": "2.2.0",
+      "Dependencies": []
+    },
+    "Microsoft.Extensions.Caching.Abstractions": {
+      "Id": "Microsoft.Extensions.Caching.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Threading",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Caching.Memory": {
+      "Id": "Microsoft.Extensions.Caching.Memory",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Caching.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Configuration": {
+      "Id": "Microsoft.Extensions.Configuration",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.IO",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Runtime.InteropServices",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Threading",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration.Abstractions",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions": {
+      "Id": "Microsoft.Extensions.Configuration.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder": {
+      "Id": "Microsoft.Extensions.Configuration.Binder",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.ComponentModel.TypeConverter",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Configuration",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection": {
+      "Id": "Microsoft.Extensions.DependencyInjection",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Collections.Concurrent",
+          "Item2": "[4.0.12, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Threading",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions": {
+      "Id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.ComponentModel",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Linq.Expressions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Reflection",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.DependencyModel": {
+      "Id": "Microsoft.Extensions.DependencyModel",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.DotNet.InternalAbstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[9.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions": {
+      "Id": "Microsoft.Extensions.FileProviders.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.IO",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Composite": {
+      "Id": "Microsoft.Extensions.FileProviders.Composite",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Abstractions",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Physical": {
+      "Id": "Microsoft.Extensions.FileProviders.Physical",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.FileProviders.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.FileSystemGlobbing",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.FileSystemGlobbing": {
+      "Id": "Microsoft.Extensions.FileSystemGlobbing",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.Extensions.Globalization.CultureInfoCache": {
+      "Id": "Microsoft.Extensions.Globalization.CultureInfoCache",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections.Concurrent",
+          "Item2": "[4.0.12, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Localization": {
+      "Id": "Microsoft.Extensions.Localization",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.AspNetCore.Hosting.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Localization.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Localization.Abstractions": {
+      "Id": "Microsoft.Extensions.Localization.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.CSharp",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions": {
+      "Id": "Microsoft.Extensions.Logging.Abstractions",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Collections.Concurrent",
+          "Item2": "[4.0.12, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Reflection",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Runtime.InteropServices",
+          "Item2": "[4.1.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.ObjectPool": {
+      "Id": "Microsoft.Extensions.ObjectPool",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.Extensions.Options": {
+      "Id": "Microsoft.Extensions.Options",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.ComponentModel",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Linq.Expressions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Reflection",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Threading",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Primitives",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.PlatformAbstractions": {
+      "Id": "Microsoft.Extensions.PlatformAbstractions",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "Microsoft.Extensions.Primitives": {
+      "Id": "Microsoft.Extensions.Primitives",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Runtime",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "Microsoft.Extensions.WebEncoders": {
+      "Id": "Microsoft.Extensions.WebEncoders",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "Microsoft.Extensions.Options",
+          "Item2": "[1.0.0, )"
+        },
+        {
+          "Item1": "System.Text.Encodings.Web",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Net.Http.Headers": {
+      "Id": "Microsoft.Net.Http.Headers",
+      "Version": "1.0.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Contracts",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.0.1, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.1.0, )"
+        },
+        {
+          "Item1": "System.Text.Encoding",
+          "Item2": "[4.0.11, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime": {
+      "Id": "Microsoft.Rest.ClientRuntime",
+      "Version": "2.3.20",
+      "Dependencies": [
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[10.0.3, )"
+        }
+      ]
+    },
+    "Microsoft.VisualStudio.OLE.Interop": {
+      "Id": "Microsoft.VisualStudio.OLE.Interop",
+      "Version": "7.10.6071",
+      "Dependencies": []
+    },
+    "Newtonsoft.Json": {
+      "Id": "Newtonsoft.Json",
+      "Version": "12.0.3",
+      "Dependencies": []
+    },
+    "NPOI": {
+      "Id": "NPOI",
+      "Version": "2.4.1",
+      "Dependencies": [
+        {
+          "Item1": "SharpZipLib",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "SharpZipLib": {
+      "Id": "SharpZipLib",
+      "Version": "1.0.0",
+      "Dependencies": []
+    },
+    "System.AppContext": {
+      "Id": "System.AppContext",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Buffers": {
+      "Id": "System.Buffers",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Collections": {
+      "Id": "System.Collections",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Collections.Concurrent": {
+      "Id": "System.Collections.Concurrent",
+      "Version": "4.0.12",
+      "Dependencies": []
+    },
+    "System.Collections.Immutable": {
+      "Id": "System.Collections.Immutable",
+      "Version": "1.2.0",
+      "Dependencies": []
+    },
+    "System.ComponentModel": {
+      "Id": "System.ComponentModel",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.ComponentModel.Primitives": {
+      "Id": "System.ComponentModel.Primitives",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.ComponentModel.TypeConverter": {
+      "Id": "System.ComponentModel.TypeConverter",
+      "Version": "4.1.0",
+      "Dependencies": [
+        {
+          "Item1": "System.ComponentModel.Primitives",
+          "Item2": "[4.1.0, )"
+        }
+      ]
+    },
+    "System.Console": {
+      "Id": "System.Console",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Data.SQLite.Core": {
+      "Id": "System.Data.SQLite.Core",
+      "Version": "1.0.109.2",
+      "Dependencies": []
+    },
+    "System.Diagnostics.Contracts": {
+      "Id": "System.Diagnostics.Contracts",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Diagnostics.Debug": {
+      "Id": "System.Diagnostics.Debug",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Diagnostics.DiagnosticSource": {
+      "Id": "System.Diagnostics.DiagnosticSource",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Diagnostics.FileVersionInfo": {
+      "Id": "System.Diagnostics.FileVersionInfo",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Diagnostics.StackTrace": {
+      "Id": "System.Diagnostics.StackTrace",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Diagnostics.Tools": {
+      "Id": "System.Diagnostics.Tools",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Dynamic.Runtime": {
+      "Id": "System.Dynamic.Runtime",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Globalization": {
+      "Id": "System.Globalization",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.IO": {
+      "Id": "System.IO",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.IO.Abstractions": {
+      "Id": "System.IO.Abstractions",
+      "Version": "3.0.10",
+      "Dependencies": []
+    },
+    "System.IO.FileSystem": {
+      "Id": "System.IO.FileSystem",
+      "Version": "4.0.1",
+      "Dependencies": [
+        {
+          "Item1": "System.IO.FileSystem.Primitives",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "System.IO.FileSystem.Primitives": {
+      "Id": "System.IO.FileSystem.Primitives",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Linq": {
+      "Id": "System.Linq",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Linq.Expressions": {
+      "Id": "System.Linq.Expressions",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Reflection": {
+      "Id": "System.Reflection",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Reflection.Extensions": {
+      "Id": "System.Reflection.Extensions",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Reflection.Metadata": {
+      "Id": "System.Reflection.Metadata",
+      "Version": "1.3.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Collections.Immutable",
+          "Item2": "[1.2.0, )"
+        }
+      ]
+    },
+    "System.Reflection.Primitives": {
+      "Id": "System.Reflection.Primitives",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Resources.ResourceManager": {
+      "Id": "System.Resources.ResourceManager",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Runtime": {
+      "Id": "System.Runtime",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Runtime.Extensions": {
+      "Id": "System.Runtime.Extensions",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Runtime.Handles": {
+      "Id": "System.Runtime.Handles",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Runtime.InteropServices": {
+      "Id": "System.Runtime.InteropServices",
+      "Version": "4.1.0",
+      "Dependencies": []
+    },
+    "System.Runtime.Numerics": {
+      "Id": "System.Runtime.Numerics",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Runtime.Serialization.Primitives": {
+      "Id": "System.Runtime.Serialization.Primitives",
+      "Version": "4.1.1",
+      "Dependencies": []
+    },
+    "System.Security.Cryptography.Algorithms": {
+      "Id": "System.Security.Cryptography.Algorithms",
+      "Version": "4.2.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Security.Cryptography.Primitives",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "System.Security.Cryptography.Encoding": {
+      "Id": "System.Security.Cryptography.Encoding",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Security.Cryptography.Primitives": {
+      "Id": "System.Security.Cryptography.Primitives",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Security.Cryptography.X509Certificates": {
+      "Id": "System.Security.Cryptography.X509Certificates",
+      "Version": "4.1.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Security.Cryptography.Algorithms",
+          "Item2": "[4.2.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Encoding",
+          "Item2": "[4.0.0, )"
+        }
+      ]
+    },
+    "System.Text.Encoding": {
+      "Id": "System.Text.Encoding",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Text.Encoding.CodePages": {
+      "Id": "System.Text.Encoding.CodePages",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Text.Encoding.Extensions": {
+      "Id": "System.Text.Encoding.Extensions",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Text.Encodings.Web": {
+      "Id": "System.Text.Encodings.Web",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.Threading": {
+      "Id": "System.Threading",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Threading.Tasks": {
+      "Id": "System.Threading.Tasks",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Threading.Tasks.Parallel": {
+      "Id": "System.Threading.Tasks.Parallel",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Threading.Thread": {
+      "Id": "System.Threading.Thread",
+      "Version": "4.0.0",
+      "Dependencies": []
+    },
+    "System.ValueTuple": {
+      "Id": "System.ValueTuple",
+      "Version": "4.5.0",
+      "Dependencies": []
+    },
+    "System.Xml.ReaderWriter": {
+      "Id": "System.Xml.ReaderWriter",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Xml.XDocument": {
+      "Id": "System.Xml.XDocument",
+      "Version": "4.0.11",
+      "Dependencies": []
+    },
+    "System.Xml.XmlDocument": {
+      "Id": "System.Xml.XmlDocument",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Xml.XPath": {
+      "Id": "System.Xml.XPath",
+      "Version": "4.0.1",
+      "Dependencies": []
+    },
+    "System.Xml.XPath.XDocument": {
+      "Id": "System.Xml.XPath.XDocument",
+      "Version": "4.0.1",
+      "Dependencies": [
+        {
+          "Item1": "System.Xml.XPath",
+          "Item2": "[4.0.1, )"
+        }
+      ]
+    },
+    "UiPath": {
+      "Id": "UiPath",
+      "Version": "20.4.7369.30616-alpha",
+      "Dependencies": []
+    },
+    "UiPath.Excel.Activities": {
+      "Id": "UiPath.Excel.Activities",
+      "Version": "2.8.0-preview",
+      "Dependencies": [
+        {
+          "Item1": "ClosedXML",
+          "Item2": "[0.87.1, )"
+        },
+        {
+          "Item1": "CsvHelper",
+          "Item2": "[2.13.5, )"
+        },
+        {
+          "Item1": "DocumentFormat.OpenXml",
+          "Item2": "[2.5.0, )"
+        },
+        {
+          "Item1": "Microsoft.VisualStudio.OLE.Interop",
+          "Item2": "[7.10.6071, )"
+        },
+        {
+          "Item1": "NPOI",
+          "Item2": "[2.4.1, )"
+        },
+        {
+          "Item1": "SharpZipLib",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "UiPath.Mail.Activities": {
+      "Id": "UiPath.Mail.Activities",
+      "Version": "1.8.0-preview",
+      "Dependencies": [
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "Microsoft.Exchange.WebServices",
+          "Item2": "[2.2.0, )"
+        },
+        {
+          "Item1": "BouncyCastle",
+          "Item2": "[1.8.5, )"
+        },
+        {
+          "Item1": "interop.domino.dll",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "UiPath.OCR.Contracts": {
+      "Id": "UiPath.OCR.Contracts",
+      "Version": "2.5.0-preview",
+      "Dependencies": []
+    },
+    "UiPath.System.Activities": {
+      "Id": "UiPath.System.Activities",
+      "Version": "20.3.0-preview",
+      "Dependencies": [
+        {
+          "Item1": "CsvHelper",
+          "Item2": "[2.13.5, )"
+        },
+        {
+          "Item1": "Microsoft.AspNet.SignalR.Client",
+          "Item2": "[2.4.0, )"
+        },
+        {
+          "Item1": "Microsoft.Rest.ClientRuntime",
+          "Item2": "[2.3.20, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[12.0.3, )"
+        }
+      ]
+    },
+    "UiPath.UIAutomation.Activities": {
+      "Id": "UiPath.UIAutomation.Activities",
+      "Version": "20.3.0-alpha",
+      "Dependencies": [
+        {
+          "Item1": "UiPath",
+          "Item2": "[20.4.7369.30616-alpha, )"
+        },
+        {
+          "Item1": "UiPath.Vision",
+          "Item2": "[2.0.2-preview, )"
+        },
+        {
+          "Item1": "UiPath.OCR.Contracts",
+          "Item2": "[2.5.0-preview, )"
+        },
+        {
+          "Item1": "AvalonEdit",
+          "Item2": "[5.0.3, )"
+        },
+        {
+          "Item1": "Extended.Wpf.Toolkit",
+          "Item2": "[2.8.0, )"
+        },
+        {
+          "Item1": "Humanizer.Core",
+          "Item2": "[2.4.2, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[12.0.3, )"
+        },
+        {
+          "Item1": "System.IO.Abstractions",
+          "Item2": "[3.0.10, )"
+        },
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        }
+      ]
+    },
+    "UiPath.Vision": {
+      "Id": "UiPath.Vision",
+      "Version": "2.0.2-preview",
+      "Dependencies": [
+        {
+          "Item1": "UiPath.OCR.Contracts",
+          "Item2": "[2.5.0-preview, )"
+        }
+      ]
+    }
+  }
+}

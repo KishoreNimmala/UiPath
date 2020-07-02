@@ -1,0 +1,6 @@
+Nightingale GST Auto Draft Details
+month	InvoiceAmount	TaxAmount	IntegratedTax
+MAY	584.93		495.70		89.23	
+JUNE	623.29		528.21		95.08	
+JULY	4,286.55	3,632.67	653.88	
+AUGUST	

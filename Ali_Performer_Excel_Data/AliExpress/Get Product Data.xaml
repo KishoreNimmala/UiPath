@@ -1,0 +1,1616 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_Product_Data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Link" Type="InArgument(x:String)" />
+    <x:Property Name="io_ProductList" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>6594,10455.3333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Get_Product_Data_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Get Product Data" sap:VirtualizedContainerService.HintSize="6554,10375.3333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="link">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="OutDataTable" />
+      <Variable x:TypeArguments="x:String" Name="outData" />
+      <Variable x:TypeArguments="x:String" Name="Description" />
+      <Variable x:TypeArguments="ui:Browser" Name="Ali_BrowserWindow" />
+      <Variable x:TypeArguments="x:String" Name="op" />
+      <Variable x:TypeArguments="sd:DataTable" Name="FirstImageData" />
+      <Variable x:TypeArguments="x:String" Name="Im1" />
+      <Variable x:TypeArguments="x:String" Name="Im2" />
+      <Variable x:TypeArguments="x:String" Name="Im5" />
+      <Variable x:TypeArguments="x:String" Name="Im3" />
+      <Variable x:TypeArguments="x:String" Name="Im4" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="ImgCount" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[io_ProductList]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="6532,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Url&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image1&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image3&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image4&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap:VirtualizedContainerService.HintSize="6532,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[link]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Link]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe AliExpress.c...'" sap:VirtualizedContainerService.HintSize="6532,9820" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0cfe7d8af0c8303d97dc8f67d348929f" Selector="&lt;html app='chrome.exe' title='**' /&gt;" UiBrowser="[Ali_BrowserWindow]">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="6518,9674" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="ProductName" />
+              <Variable x:TypeArguments="x:Boolean" Name="checkDes" />
+              <Variable x:TypeArguments="x:Object" Name="idx" />
+              <Variable x:TypeArguments="x:Boolean" Name="ColorExists" />
+              <Variable x:TypeArguments="sd:DataTable" Name="ImageList" />
+              <Variable x:TypeArguments="x:String" Name="outData" />
+              <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Spanlist" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" ContinueOnError="True" DisplayName="Set Focus" sap:VirtualizedContainerService.HintSize="6496,68" sap2010:WorkflowViewState.IdRef="SetFocus_1">
+              <ui:SetFocus.Target>
+                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[Ali_BrowserWindow]" WaitForReady="INTERACTIVE" />
+              </ui:SetFocus.Target>
+            </ui:SetFocus>
+            <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Find Image 'chrome.exe Holds'" sap:VirtualizedContainerService.HintSize="6496,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+              <ui:WaitImageAppear.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIASURBVDhP1VO/TxRhFNy9vQNjYa2xEUMgKHCXgFCjdpRoiC0xtibWmtjaaSQW2JnoPyB/ipVUcLe7B+GXAS243I4z75a9t+S4Sgonmdy792Zm3375NsAV4GpDs+Mt4PtDYIOtjRD4TFo9gDbL5/SY14HdHJtLwLcA2acI2XqI7sdgKKWRVh7zOhSh2XqAo2cR2gsRkvkK2g8ipPODqZlpqJVHXo/i3+GTClrjNcTTNDau8Vd19RLWck1kHnk9itCkQfFMFekshWMB4vsBktkqya1KpI4zaaSVR16PfugMBdMVCkZw9HoN7aXbiKdCxBbco2r1NJNGWvPQ69EPpaF1j9st3kCWZTh4uYLW3bBnzANVq6eZNNKahzMPF6pXIacqOPv5Aydf3qN5i4a560jqIz2yVk8zaaSVR16P0qbapHmHt+DtC2Ts7T2dw85Nnt9Ej6rV00waaeUZsml+ZnxyazLE782v6HbO8OvDG+ytLhhVq6eZNPZmWmZYqA7cwnVVeFbH716hkzbR/XNiVK2eZtJ4j0c51NE21tWq17C7PGFUbb08yNOjFJrWy8KkMWpXJp5kkGhXbrSkOfd49EN1ibmJN5yfl/XzWdHzM3o9itD9tUc45ZeR6upcNF5CaeWR16MI7Wxv4fD5Y356NFzYeCCpkVYeeT2K0H+J/yUU+AutijV44YABLQAAAABJRU5ErkJggg==" />
+              </ui:WaitImageAppear.Image>
+              <ui:WaitImageAppear.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+              </ui:WaitImageAppear.Target>
+            </ui:WaitImageAppear>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Product Name'" sap:VirtualizedContainerService.HintSize="6496,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4a94c944c1cc64e93ff83950c7f4868e" Selector="&lt;webctrl class='product-*' parentclass='product-info' parentid='root' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[ProductName]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <Assign sap:VirtualizedContainerService.HintSize="6496,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_51">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Description]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[FirstImageData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'DIV  root'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ImageUrl' attr='src'&gt;&lt;webctrl tag='ul' class='images-view-list' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="6496,106" sap2010:WorkflowViewState.IdRef="ExtractData_24" MaxNumberOfResults="100">
+              <ui:ExtractData.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a6734de8919233f2af9ebb38387f3957" Selector="&lt;webctrl id='root' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+              </ui:ExtractData.Target>
+            </ui:ExtractData>
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FirstImageData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="6496,1587.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1438.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[ImgCount = 1]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_54">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_70">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Im1]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <If Condition="[ImgCount = 2]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_55">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_71">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Im2]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <If Condition="[ImgCount = 3]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_56">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_72">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Im3]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <If Condition="[ImgCount = 4]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_57">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_73">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Im4]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <If Condition="[ImgCount = 5]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_58">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_74">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[Im5]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_75">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[ImgCount]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[ImgCount+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+            <ui:UiElementExists DisplayName="Element Exists 'STRONG'" Exists="[checkDes]" sap:VirtualizedContainerService.HintSize="6496,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="57f4b46ac0bd635d66c1fe62c35f4bb5" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='j-product-description' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[checkDes]" sap:VirtualizedContainerService.HintSize="6496,1260" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Get Description" sap:VirtualizedContainerService.HintSize="650.666666666667,1110.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="Feature" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FindChildren Children="[Spanlist]" ContinueOnError="True" DisplayName="Find Children" Filter="&lt;webctrl parentid='j-product-description' tag='SPAN' /&gt;" sap:VirtualizedContainerService.HintSize="628.666666666667,68" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+                    <ui:FindChildren.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='j-product-description' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:FindChildren.Target>
+                  </ui:FindChildren>
+                  <If Condition="[Spanlist isnot  Nothing]" sap:VirtualizedContainerService.HintSize="628.666666666667,878.666666666667" sap2010:WorkflowViewState.IdRef="If_18">
+                    <If.Then>
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="502.666666666667,729.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Spanlist]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="ui:UiElement">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,594.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:GetAttribute Attribute="aaname" ContinueOnError="True" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="464,96" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                                <ui:GetAttribute.Result>
+                                  <OutArgument x:TypeArguments="x:String">[Feature]</OutArgument>
+                                </ui:GetAttribute.Result>
+                                <ui:GetAttribute.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[item]" WaitForReady="INTERACTIVE" />
+                                </ui:GetAttribute.Target>
+                              </ui:GetAttribute>
+                              <If Condition="[Feature.Contains(&quot;//&quot;) or Feature.Contains(&quot;htttp:&quot;) or Feature.Contains(&quot;https:&quot;) or Feature.Length &lt; 2 or Feature.Contains(&quot;***&quot;)]" sap:VirtualizedContainerService.HintSize="464,334.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If.Else>
+                                  <Sequence DisplayName="Appending Description line To Description" sap:VirtualizedContainerService.HintSize="264,185.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[Description]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+Feature]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </If.Then>
+            </If>
+            <ui:UiElementExists DisplayName="Element Exists 'DT'" Exists="[ColorExists]" sap:VirtualizedContainerService.HintSize="6496,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="53b8fb102aafed5450c1d830c8a63880" Selector="&lt;webctrl aaname='*Color*' parentid='root' tag='DIV' class='sku-title' parentclass='sku-property' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[ColorExists]" sap:VirtualizedContainerService.HintSize="6496,5519.33333333333" sap2010:WorkflowViewState.IdRef="If_5">
+              <If.Then>
+                <Sequence DisplayName="Color Exists &amp; Check For Size Exists" sap:VirtualizedContainerService.HintSize="4719.33333333333,5370" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="SizeExits" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists 'Size'" Exists="[SizeExits]" sap:VirtualizedContainerService.HintSize="4697.33333333333,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="01b837abb8e39a9928a1944a414f388b" Selector="&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[SizeExits]" sap:VirtualizedContainerService.HintSize="4697.33333333333,5100" sap2010:WorkflowViewState.IdRef="If_35">
+                    <If.Then>
+                      <Sequence DisplayName="Sequence For Sizes &amp; Colors" sap:VirtualizedContainerService.HintSize="3546,4950.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="ColorList" />
+                          <Variable x:TypeArguments="x:Boolean" Default="True" Name="CheckName" />
+                          <Variable x:TypeArguments="x:Int32" Default="1" Name="ColorCount" />
+                          <Variable x:TypeArguments="sd:DataTable" Name="SizeList" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='title' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="3524,106" sap2010:WorkflowViewState.IdRef="ExtractData_13" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='text' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="3524,106" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SizeList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='title' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="3524,106" sap2010:WorkflowViewState.IdRef="ExtractData_15" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SizeList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='text' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="3524,106" sap2010:WorkflowViewState.IdRef="ExtractData_16" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ColorList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="3524,4242.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="3493.33333333333,4094" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="ItemExists" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:UiElementExists DisplayName="Element Exists" Exists="[ItemExists]" sap:VirtualizedContainerService.HintSize="3471.33333333333,68" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[&quot;&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&lt;webctrl tag='DIV'  /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" TimeoutMS="300" WaitForReady="NONE" />
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <If Condition="[ItemExists]" sap:VirtualizedContainerService.HintSize="3471.33333333333,3760.66666666667" sap2010:WorkflowViewState.IdRef="If_43">
+                                  <If.Then>
+                                    <Sequence DisplayName="Sequence For  each color item" sap:VirtualizedContainerService.HintSize="1722.66666666667,1939.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="Price" />
+                                        <Variable x:TypeArguments="x:String" Name="Image" />
+                                        <Variable x:TypeArguments="x:String" Name="ItemName" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1700.66666666667,62" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Color Count:&quot;+ColorCount.ToString]" />
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="1700.66666666667,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&lt;webctrl tag='DIV'  /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" WaitForReady="NONE" />
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  j-sku-discount-pr...'" sap:VirtualizedContainerService.HintSize="1700.66666666667,106" sap2010:WorkflowViewState.IdRef="GetValue_10">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="95c94b6be0e5256cd3e6b955424ceb85" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current*' /&gt;" WaitForReady="INTERACTIVE" />
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="1700.66666666667,210.666666666667" sap2010:WorkflowViewState.IdRef="If_36">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(Price,"-")(1)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <Assign sap:VirtualizedContainerService.HintSize="1700.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_38">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[Image]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[Split(row(1).ToString,"_50x50.jpg")(0)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SizeList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1700.66666666667,1069.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+                                        <ui:ForEachRow.Body>
+                                          <ActivityAction x:TypeArguments="sd:DataRow">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="sizerow" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Size Row Body" sap:VirtualizedContainerService.HintSize="1670,920.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:String" Name="Desc" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[sizerow(0) isNot Nothing]" sap:VirtualizedContainerService.HintSize="1648,734.666666666667" sap2010:WorkflowViewState.IdRef="If_53">
+                                                <If.Then>
+                                                  <If Condition="[sizerow(0).ToString.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="1090,585.333333333333" sap2010:WorkflowViewState.IdRef="If_51">
+                                                    <If.Then>
+                                                      <Sequence DisplayName="Sequence For Size row" sap:VirtualizedContainerService.HintSize="532,436" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[Description.Length &gt;1]" sap:VirtualizedContainerService.HintSize="510,210.666666666667" sap2010:WorkflowViewState.IdRef="If_49">
+                                                          <If.Then>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_58">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+"Color : "+row(0).ToString+Environment.NewLine+"Size :"+sizerow(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_59">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">["Color : "+row(0).ToString+Environment.NewLine+"Size :"+sizerow(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Else>
+                                                        </If>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="510,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_60">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName+" ( Color : "+row(0).ToString+", Size : "+sizerow(0).ToString+")"]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence DisplayName="Sequence For Size Row" sap:VirtualizedContainerService.HintSize="532,436" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[Description.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="510,210.666666666667" sap2010:WorkflowViewState.IdRef="If_50">
+                                                          <If.Then>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+"Color : "+row(0).ToString+Environment.NewLine+"Size :"+sizerow(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">["Color : "+row(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Else>
+                                                        </If>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="510,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="532,436" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If Condition="[Description.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="510,210.666666666667" sap2010:WorkflowViewState.IdRef="If_52">
+                                                      <If.Then>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_64">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+"Color : "+row(0).ToString+Environment.NewLine+"Size :"+sizerow(0).ToString]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_65">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">["Color : "+row(0).ToString]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </If.Else>
+                                                    </If>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="510,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_66">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ItemName,link,Price,Desc,Image,Im1,Im2,Im3,Im4}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1648,22" sap2010:WorkflowViewState.IdRef="AddDataRow_13" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEachRow.Body>
+                                      </ui:ForEachRow>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Sequence For Color Name" sap:VirtualizedContainerService.HintSize="1722.66666666667,3611.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="ui:GenericValue" Name="Price" />
+                                        <Variable x:TypeArguments="x:Int32" Default="1" Name="count" />
+                                        <Variable x:TypeArguments="x:String" Name="Image1" />
+                                        <Variable x:TypeArguments="x:String" Name="Image2" />
+                                        <Variable x:TypeArguments="x:String" Name="Image3" />
+                                        <Variable x:TypeArguments="x:String" Name="Image4" />
+                                        <Variable x:TypeArguments="x:String" Name="Image5" />
+                                        <Variable x:TypeArguments="x:Boolean" Name="PriceExists" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1700.66666666667,62" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Single :&quot;+ColorCount.ToString]" />
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="1700.66666666667,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;'/&gt;&lt;webctrl tag='DIV' idx='1' /&gt;&quot;]" WaitForReady="NONE" />
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="1700.66666666667,106" sap2010:WorkflowViewState.IdRef="GetValue_11">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="639b8dfb814cf6132eee04f01b353a7f" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current*' /&gt;" WaitForReady="INTERACTIVE" />
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="1700.66666666667,210.666666666667" sap2010:WorkflowViewState.IdRef="If_37">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_40">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="ui:GenericValue">[Split(Price,"-")(1)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'DIV  root'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ImageUrl' attr='src'&gt;&lt;webctrl tag='ul' class='images-view-list' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1700.66666666667,106" sap2010:WorkflowViewState.IdRef="ExtractData_17" MaxNumberOfResults="100">
+                                        <ui:ExtractData.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a6734de8919233f2af9ebb38387f3957" Selector="&lt;webctrl id='root' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+                                        </ui:ExtractData.Target>
+                                      </ui:ExtractData>
+                                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1700.66666666667,1587.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                                        <ui:ForEachRow.Body>
+                                          <ActivityAction x:TypeArguments="sd:DataRow">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1438.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[count = 1]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_38">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 2]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_39">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_42">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 3]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_40">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 4]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_41">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 5]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_42">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_45">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEachRow.Body>
+                                      </ui:ForEachRow>
+                                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SizeList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1700.66666666667,1069.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                                        <ui:ForEachRow.Body>
+                                          <ActivityAction x:TypeArguments="sd:DataRow">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="sizerow" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body Size Row" sap:VirtualizedContainerService.HintSize="1670,920.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:String" Name="Desc" />
+                                                <Variable x:TypeArguments="x:String" Name="ItemName" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[sizerow(0) isNot Nothing]" sap:VirtualizedContainerService.HintSize="1648,734.666666666667" sap2010:WorkflowViewState.IdRef="If_45">
+                                                <If.Then>
+                                                  <If Condition="[sizerow(0).ToString.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="1090,585.333333333333" sap2010:WorkflowViewState.IdRef="If_44">
+                                                    <If.Then>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="532,436" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[Description.Length &gt;1]" sap:VirtualizedContainerService.HintSize="510,210.666666666667" sap2010:WorkflowViewState.IdRef="If_46">
+                                                          <If.Then>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+"Color : "+row(0).ToString+Environment.NewLine+"Size :"+sizerow(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">["Color : "+row(0).ToString+Environment.NewLine+"Size :"+sizerow(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Else>
+                                                        </If>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="510,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_67">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName+" ( Color : "+row(0).ToString+", Size : "+sizerow(0).ToString+")"]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="532,436" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[Description.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="510,210.666666666667" sap2010:WorkflowViewState.IdRef="If_47">
+                                                          <If.Then>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+"Color : "+row(0).ToString+Environment.NewLine]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_55">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">["Color : "+row(0).ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </If.Else>
+                                                        </If>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="510,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_68">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="532,436" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If Condition="[Description.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="510,210.666666666667" sap2010:WorkflowViewState.IdRef="If_48">
+                                                      <If.Then>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_56">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+"Color : "+row(0).ToString]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[Desc]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">["Color : "+row(0).ToString]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </If.Else>
+                                                    </If>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="510,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ItemName,link,Price,Desc,Image1,Image2,Image3,Image4,Image5}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1648,22" sap2010:WorkflowViewState.IdRef="AddDataRow_14" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEachRow.Body>
+                                      </ui:ForEachRow>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <Assign sap:VirtualizedContainerService.HintSize="3471.33333333333,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_47">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[ColorCount]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[ColorCount+1]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                        </ui:ForEachRow>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Sequence For Multiple Colors" sap:VirtualizedContainerService.HintSize="1125.33333333333,3611.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="ColorList" />
+                          <Variable x:TypeArguments="x:Boolean" Default="True" Name="CheckName" />
+                          <Variable x:TypeArguments="x:Int32" Default="1" Name="ColorCount" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='title' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1103.33333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_18" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='text' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1103.33333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_19" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ColorList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1103.33333333333,3195.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1072.66666666667,3046.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="ItemExists" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:UiElementExists DisplayName="Element Exists" Exists="[ItemExists]" sap:VirtualizedContainerService.HintSize="1050.66666666667,68" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[&quot;&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&lt;webctrl tag='DIV'  /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" TimeoutMS="300" WaitForReady="NONE" />
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <If Condition="[ItemExists]" sap:VirtualizedContainerService.HintSize="1050.66666666667,2713.33333333333" sap2010:WorkflowViewState.IdRef="If_16">
+                                  <If.Then>
+                                    <Sequence DisplayName="Sequence For  each color item" sap:VirtualizedContainerService.HintSize="486,993.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="Price" />
+                                        <Variable x:TypeArguments="x:String" Name="Image" />
+                                        <Variable x:TypeArguments="x:String" Name="ItemName" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="464,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Multiple :&quot;+ColorCount.ToString]" />
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&lt;webctrl tag='DIV'  /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" WaitForReady="NONE" />
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  j-sku-discount-pr...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="95c94b6be0e5256cd3e6b955424ceb85" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current*' /&gt;" WaitForReady="INTERACTIVE" />
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_17">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(Price,"-")(1)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[Image]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[Split(row(1).ToString,"_50x50.jpg")(0)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ItemName,link,Price,Description,Image,Im1,Im2,Im3,Im4}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Sequence For Single Color" sap:VirtualizedContainerService.HintSize="538.666666666667,2564" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="ui:GenericValue" Name="Price" />
+                                        <Variable x:TypeArguments="x:Int32" Default="1" Name="count" />
+                                        <Variable x:TypeArguments="x:String" Name="Image1" />
+                                        <Variable x:TypeArguments="x:String" Name="Image2" />
+                                        <Variable x:TypeArguments="x:String" Name="Image3" />
+                                        <Variable x:TypeArguments="x:String" Name="Image4" />
+                                        <Variable x:TypeArguments="x:String" Name="Image5" />
+                                        <Variable x:TypeArguments="x:Boolean" Name="PriceExists" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="516.666666666667,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Single :&quot;+ColorCount.ToString]" />
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="516.666666666667,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl aaname='*Color*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&lt;webctrl tag='DIV'  /&gt;&quot;]" WaitForReady="NONE" />
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="516.666666666667,106" sap2010:WorkflowViewState.IdRef="GetValue_7">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="639b8dfb814cf6132eee04f01b353a7f" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current' /&gt;" WaitForReady="INTERACTIVE" />
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="516.666666666667,210.666666666667" sap2010:WorkflowViewState.IdRef="If_20">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="ui:GenericValue">[Split(Price,"-")(1)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'DIV  root'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ImageUrl' attr='src'&gt;&lt;webctrl tag='ul' class='images-view-list' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="516.666666666667,106" sap2010:WorkflowViewState.IdRef="ExtractData_23" MaxNumberOfResults="100">
+                                        <ui:ExtractData.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a6734de8919233f2af9ebb38387f3957" Selector="&lt;webctrl id='root' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+                                        </ui:ExtractData.Target>
+                                      </ui:ExtractData>
+                                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="516.666666666667,1587.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                        <ui:ForEachRow.Body>
+                                          <ActivityAction x:TypeArguments="sd:DataRow">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1438.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[count = 1]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_21">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 2]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_22">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 3]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_23">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 4]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_24">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 5]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_25">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEachRow.Body>
+                                      </ui:ForEachRow>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row(0).ToString+&quot; : &quot;+ProductName,link,Price,Description,Image1,Image2,Image3,Image4,Image5}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="516.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <Assign sap:VirtualizedContainerService.HintSize="1050.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[ColorCount]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[ColorCount+1]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                        </ui:ForEachRow>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Check For Size" sap:VirtualizedContainerService.HintSize="1750.66666666667,3884.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="SizeExits" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists 'Size'" Exists="[SizeExits]" sap:VirtualizedContainerService.HintSize="1728.66666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="01b837abb8e39a9928a1944a414f388b" Selector="&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[SizeExits]" sap:VirtualizedContainerService.HintSize="1728.66666666667,3614.66666666667" sap2010:WorkflowViewState.IdRef="If_26">
+                    <If.Then>
+                      <Sequence DisplayName="Sequence For Multiple Sizes" sap:VirtualizedContainerService.HintSize="1125.33333333333,3465.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="SizeList" />
+                          <Variable x:TypeArguments="x:Boolean" Default="True" Name="CheckName" />
+                          <Variable x:TypeArguments="x:Int32" Default="1" Name="SizeCount" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SizeList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='title' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1103.33333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_21" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SizeList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='text' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1103.33333333333,106" sap2010:WorkflowViewState.IdRef="ExtractData_22" MaxNumberOfResults="100">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SizeList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1103.33333333333,3049.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1072.66666666667,2900.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="ItemExists" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:UiElementExists DisplayName="Element Exists" Exists="[ItemExists]" sap:VirtualizedContainerService.HintSize="1050.66666666667,68" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[&quot;&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+SizeCount.ToString+&quot;'/&gt;&lt;webctrl tag='DIV' idx='1' /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" TimeoutMS="300" WaitForReady="NONE" />
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <If Condition="[ItemExists]" sap:VirtualizedContainerService.HintSize="1050.66666666667,2567.33333333333" sap2010:WorkflowViewState.IdRef="If_34">
+                                  <If.Then>
+                                    <Sequence DisplayName="Sequence For  each color item" sap:VirtualizedContainerService.HintSize="486,993.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="Price" />
+                                        <Variable x:TypeArguments="x:String" Name="Image" />
+                                        <Variable x:TypeArguments="x:String" Name="ItemName" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="464,62" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Multiple :&quot;+SizeCount.ToString]" />
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+SizeCount.ToString+&quot;'/&gt;&lt;webctrl tag='DIV' idx='1' /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" WaitForReady="NONE" />
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  j-sku-discount-pr...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="95c94b6be0e5256cd3e6b955424ceb85" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current*' /&gt;" WaitForReady="INTERACTIVE" />
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_27">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(Price,"-")(1)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[Image]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[Split(row(1).ToString,"_50x50.jpg")(0)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName+" (Size : "+row(0).ToString+" )"]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ItemName,link,Price,Description,Image,Im1,Im2,Im3,Im4}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Sequence For Single Color" sap:VirtualizedContainerService.HintSize="538.666666666667,2418" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="ui:GenericValue" Name="Price" />
+                                        <Variable x:TypeArguments="x:Int32" Default="1" Name="count" />
+                                        <Variable x:TypeArguments="x:String" Name="Image1" />
+                                        <Variable x:TypeArguments="x:String" Name="Image2" />
+                                        <Variable x:TypeArguments="x:String" Name="Image3" />
+                                        <Variable x:TypeArguments="x:String" Name="Image4" />
+                                        <Variable x:TypeArguments="x:String" Name="Image5" />
+                                        <Variable x:TypeArguments="x:Boolean" Name="PriceExists" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="516.666666666667,62" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Single :&quot;+SizeCount.ToString]" />
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="516.666666666667,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl aaname='*Size*' parentid='root' class='sku-title' parentclass='sku-property' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='root' tag='UL' class='sku-property-list' parentclass='sku-property' /&gt;&lt;webctrl tag='LI' idx='&quot;+SizeCount.ToString+&quot;'/&gt;&lt;webctrl tag='DIV' idx='1' /&gt; /&gt;&quot;]" WaitForReady="NONE" />
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="516.666666666667,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="639b8dfb814cf6132eee04f01b353a7f" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current*' /&gt;" WaitForReady="INTERACTIVE" />
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="516.666666666667,210.666666666667" sap2010:WorkflowViewState.IdRef="If_28">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="ui:GenericValue">[Split(Price,"-")(1)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="516.666666666667,1587.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                                        <ui:ForEachRow.Body>
+                                          <ActivityAction x:TypeArguments="sd:DataRow">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1438.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[count = 1]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_29">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 2]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_30">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 3]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_31">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 4]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_32">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <If Condition="[count = 5]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_33">
+                                                <If.Then>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </If.Then>
+                                              </If>
+                                              <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEachRow.Body>
+                                      </ui:ForEachRow>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row(0).ToString+&quot; : &quot;+ProductName+&quot; ( Size : &quot;+row(0).ToString+&quot; )&quot;,link,Price,Description,Image1,Image2,Image3,Image4,Image5}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="516.666666666667,22" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <Assign sap:VirtualizedContainerService.HintSize="1050.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[SizeCount]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[SizeCount+1]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                        </ui:ForEachRow>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Sequence For Single Color" sap:VirtualizedContainerService.HintSize="577.333333333333,2580.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="ui:GenericValue" Name="Price" />
+                          <Variable x:TypeArguments="x:Int32" Default="1" Name="count" />
+                          <Variable x:TypeArguments="x:String" Name="Image1" />
+                          <Variable x:TypeArguments="x:String" Name="Image2" />
+                          <Variable x:TypeArguments="x:String" Name="Image3" />
+                          <Variable x:TypeArguments="x:String" Name="Image4" />
+                          <Variable x:TypeArguments="x:String" Name="Image5" />
+                          <Variable x:TypeArguments="x:Boolean" Name="PriceExists" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="555.333333333333,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="639b8dfb814cf6132eee04f01b353a7f" Selector="&lt;webctrl parentid='root' tag='SPAN' class='product-price-value' parentclass='product-price-current*' /&gt;" WaitForReady="INTERACTIVE" />
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                        <If Condition="[Price.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="555.333333333333,210.666666666667" sap2010:WorkflowViewState.IdRef="If_19">
+                          <If.Then>
+                            <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[Split(Price,"-")(1)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </If.Then>
+                        </If>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="555.333333333333,1998" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="538.666666666667,1919.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'DIV  root'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ImageUrl' attr='src'&gt;&lt;webctrl tag='ul' class='images-view-list' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="516.666666666667,106" sap2010:WorkflowViewState.IdRef="ExtractData_20" MaxNumberOfResults="100">
+                                <ui:ExtractData.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a6734de8919233f2af9ebb38387f3957" Selector="&lt;webctrl id='root' tag='DIV' /&gt;" WaitForReady="COMPLETE" />
+                                </ui:ExtractData.Target>
+                              </ui:ExtractData>
+                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="516.666666666667,1649.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                <ui:ForEachRow.Body>
+                                  <ActivityAction x:TypeArguments="sd:DataRow">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1500.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[count = 1]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_11">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <If Condition="[count = 2]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_12">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <If Condition="[count = 3]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_13">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <If Condition="[count = 4]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_14">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <If Condition="[count = 5]" sap:VirtualizedContainerService.HintSize="464,210.666666666667" sap2010:WorkflowViewState.IdRef="If_15">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="242,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                      <Assign sap:VirtualizedContainerService.HintSize="464,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ProductName,link,Price,Description,Image1,Image2,Image3,Image4,Image5}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEachRow.Body>
+                              </ui:ForEachRow>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ProductName,link,Price,Description,Im1,Im2,Im3,Im4,Im5}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="555.333333333333,22" sap2010:WorkflowViewState.IdRef="AddDataRow_15" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:OutputDataTable DataTable="[io_ProductList]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="6496,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[outData]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="6496,62" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[outData]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="6493.33333333333,326.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="232,248" sap2010:WorkflowViewState.IdRef="Sequence_41">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:OutputDataTable DataTable="[io_ProductList]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="210,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[outData]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,62" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[outData]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

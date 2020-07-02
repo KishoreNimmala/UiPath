@@ -1,0 +1,275 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Get_Asin_Data"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_StoreData" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Get_Asin_Data_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get Asin Data" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="count" />
+      <Variable x:TypeArguments="x:String" Name="op" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="c" />
+    </Sequence.Variables>
+    <ui:BuildDataTable DataTable="[out_StoreData]" DisplayName="Build Data Table" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Asin&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'ZZebraSto Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="84b8a7c3e208919ee45cd3563bb59025" Selector="&lt;html app='chrome.exe' title='*Amazon*' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="nextexists" />
+            </Sequence.Variables>
+            <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[nextexists]" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e013a3e6fa9ef4e446fbb013b5f7106f" Selector="&lt;webctrl aaname='1' parentid='pagn' tag='SPAN' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[nextexists]" DisplayName="Next Condition" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <Sequence DisplayName="Sequence For Multilple Page" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="StoreData" />
+                  </Sequence.Variables>
+                  <ui:ExtractData ContinueOnError="True" DataTable="[StoreData]" DelayBetweenPagesMS="950" DisplayName="Extract Structured Data 'UL  s-results-list-atf'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Asin' attr='href'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='a' class='a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal' idx='1'/&gt;&lt;webctrl tag='h2' class='a-size-base s-inline  s-access-title  a-text-normal' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Price' attr='text'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='2'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-none' idx='1'/&gt;&lt;webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/&gt;&lt;webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_11" MaxNumberOfResults="100000" NextLinkSelector="&lt;webctrl idx='2' parentid='pagnNextLink' tag='SPAN' /&gt;">
+                    <ui:ExtractData.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b1c7bfcb796994328e4c506bd3165add" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                    </ui:ExtractData.Target>
+                  </ui:ExtractData>
+                  <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <ui:ExtractData ContinueOnError="True" DataTable="[StoreData]" DelayBetweenPagesMS="900" DisplayName="Multiple Extract Structured Data 'UL" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='Asin' attr='href' name2='Price' attr2='text'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='2'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-none' idx='1'/&gt;&lt;webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/&gt;&lt;webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_12" MaxNumberOfResults="100000" NextLinkSelector="&lt;webctrl idx='2' parentid='pagnNextLink' tag='SPAN' /&gt;">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="aea0aeb4b4e8cd877bf5a9b368059cfe" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData ContinueOnError="True" DataTable="[StoreData]" DelayBetweenPagesMS="900" DisplayName="Multiple Extract Structured Data 'UL  For Amazon.it" ExtractMetadata="&lt;extract&gt;&lt;column name='Asin' attr='href' exact='1' name2='Price' attr2='text'&gt;&lt;webctrl tag='li' class='s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='2'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-none' idx='1'/&gt;&lt;webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/&gt;&lt;webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/&gt;&lt;webctrl tag='font' idx='1'/&gt;&lt;webctrl tag='font' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_6" MaxNumberOfResults="100000" NextLinkSelector="&lt;webctrl idx='2' parentid='pagnNextLink' tag='SPAN' /&gt;">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9557214099fa240588ae316a5074bc50" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData ContinueOnError="True" DataTable="[StoreData]" DelayBetweenPagesMS="750" DisplayName="Extract Structured Data 'UL  s-results-list-atf'" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='Asin' attr='href' name2='Price' attr2='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;  &lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_4" MaxNumberOfResults="100000" NextLinkSelector="&lt;webctrl idx='2' parentid='pagnNextLink' tag='SPAN' /&gt;">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fbe0aa7628d8d6c731cc57fceb941c92" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:MergeDataTable Destination="[out_StoreData]" DisplayName="Merge Data Table" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[StoreData]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Sequence For Single Page" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[out_StoreData]" DelayBetweenPagesMS="900" DisplayName="Extract Structured Data 'UL  s-results-list-atf'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Asin' attr='href'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='a' class='a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal' idx='1'/&gt;&lt;webctrl tag='h2' class='a-size-base s-inline  s-access-title  a-text-normal' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Price' attr='text'&gt;&lt;webctrl tag='li' class='s-result-item  celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='2'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-none' idx='1'/&gt;&lt;webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/&gt;&lt;webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_13" MaxNumberOfResults="100000">
+                    <ui:ExtractData.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b1c7bfcb796994328e4c506bd3165add" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                    </ui:ExtractData.Target>
+                  </ui:ExtractData>
+                  <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[out_StoreData]" DelayBetweenPagesMS="900" DisplayName="Single Extract Structured Data 'UL  For Amazon.it" ExtractMetadata="&lt;extract&gt;&lt;column name='Asin' attr='href' exact='1' name2='Price' attr2='text'&gt;&lt;webctrl tag='li' class='s-result-item s-result-card-for-container-noborder s-carded-grid celwidget  '/&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-mini' idx='2'/&gt;&lt;webctrl tag='div' class='a-row a-spacing-none' idx='1'/&gt;&lt;webctrl tag='a' class='a-link-normal a-text-normal' idx='1'/&gt;&lt;webctrl tag='span' class='a-size-base a-color-price s-price a-text-bold' idx='1'/&gt;&lt;webctrl tag='font' idx='1'/&gt;&lt;webctrl tag='font' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="100000">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9557214099fa240588ae316a5074bc50" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                        <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[out_StoreData]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  s-results-list-atf'" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='Asin' attr='href' name2='Price' attr2='text'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' class='s-item-container' idx='1'/&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;  &lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_3" MaxNumberOfResults="100000">
+                          <ui:ExtractData.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fbe0aa7628d8d6c731cc57fceb941c92" Selector="&lt;webctrl id='s-results-list-atf' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:ExtractData.Target>
+                        </ui:ExtractData>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:CommentOut DisplayName="Comment Out">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[out_StoreData]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;loop: &quot;+c.ToString+Environment.NewLine+&quot;Assin:&quot;+row(0).ToString+Environment.NewLine+&quot;Price: &quot;+row(1).ToString]" />
+                  <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[c]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[c+1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+          <sap2010:WorkflowViewState.IdRef>Sequence_26</sap2010:WorkflowViewState.IdRef>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap2010:WorkflowViewState.IdRef>CommentOut_4</sap2010:WorkflowViewState.IdRef>
+    </ui:CommentOut>
+    <sads:DebugSymbol.Symbol>d2FDOlxVc2Vyc1xLaXNob3JlLU5pbW1hbGFcRG9jdW1lbnRzXFVpUGF0aFxBbWF6b25fQXNpbl9Gcm9udHN0b3JlX1NjcmFwZVxBbWF6b25cR2V0IEFzaW4gRGF0YS54YW1sJUgDvAEOAgEBSjNKNgIBA0wzTDYCAQJOBU7xCQIBKk8FngEXAgEFnwEFugEVAgEETiJOMwIBK0+gAk/SAgIBKVULmwEWAgEGWQ1dIgIBJF4NmgESAgEHW4sBW8QBAgEoW88BW9UBAgEnWUxZWgIBJV4bXikCAQhgEX8cAgEUggERmAEcAgEKZBNoJAIBG2kTfSMCARp+E37HAQIBFYMBE4cBJAIBDIgBE5cBIwIBC2TsCmT0CgIBI2amAWbaAQIBImRmZGsCASFkM2Q5AgEgZERkUQIBHmSGC2TECwIBHWS7AWSnCgIBHH4yfkMCARh+twF+xAECARaDAYwLgwGUCwIBE4UBpgGFAdoBAgESgwGGAYMBiwECARGDAU+DAVUCARCDAWCDAXECAQ6DAdsBgwHHCgIBDQ==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="BuildDataTable_2" sap:VirtualizedContainerService.HintSize="939.333333333333,58.6666666666667" />
+      <sap2010:ViewStateData Id="UiElementExists_1" sap:VirtualizedContainerService.HintSize="903.333333333333,106" />
+      <sap2010:ViewStateData Id="ExtractData_11" sap:VirtualizedContainerService.HintSize="416.666666666667,106" />
+      <sap2010:ViewStateData Id="ExtractData_12" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="ExtractData_6" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="ExtractData_4" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="336,522">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="416.666666666667,600.666666666667" />
+      <sap2010:ViewStateData Id="MergeDataTable_1" sap:VirtualizedContainerService.HintSize="416.666666666667,22" />
+      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="438.666666666667,932.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExtractData_13" sap:VirtualizedContainerService.HintSize="416.666666666667,106" />
+      <sap2010:ViewStateData Id="ExtractData_7" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="ExtractData_3" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="Sequence_18" sap:VirtualizedContainerService.HintSize="336,376">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_2" sap:VirtualizedContainerService.HintSize="416.666666666667,454.666666666667" />
+      <sap2010:ViewStateData Id="Sequence_19" sap:VirtualizedContainerService.HintSize="438.666666666667,724.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_6" sap:VirtualizedContainerService.HintSize="903.333333333333,1083.33333333333" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="925.333333333333,1353.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_1" sap:VirtualizedContainerService.HintSize="939.333333333333,1499.33333333333" />
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="242,62.6666666666667" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Sequence_20" sap:VirtualizedContainerService.HintSize="264,288.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEachRow_1" sap:VirtualizedContainerService.HintSize="294.666666666667,438" />
+      <sap2010:ViewStateData Id="Sequence_26" sap:VirtualizedContainerService.HintSize="316.666666666667,562">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_4" sap:VirtualizedContainerService.HintSize="939.333333333333,640.666666666667" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="961.333333333333,2402.66666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Get_Asin_Data_1" sap:VirtualizedContainerService.HintSize="1001.33333333333,2482.66666666667" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

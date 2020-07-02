@@ -1,0 +1,538 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Get_Product_Data"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Link" Type="InArgument(x:String)" />
+    <x:Property Name="io_ProductList" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Get_Product_Data_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get Product Data" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="link" />
+      <Variable x:TypeArguments="x:String" Name="OutDataTable" />
+      <Variable x:TypeArguments="x:String" Name="outData" />
+      <Variable x:TypeArguments="x:String" Name="Description" />
+      <Variable x:TypeArguments="ui:Browser" Name="Ali_BrowserWindow" />
+    </Sequence.Variables>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[link]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Link]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe AliExpress.c...'" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0cfe7d8af0c8303d97dc8f67d348929f" Selector="&lt;html app='chrome.exe' title='**' /&gt;" UiBrowser="[Ali_BrowserWindow]">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="ProductName" />
+              <Variable x:TypeArguments="x:Boolean" Name="checkDes" />
+              <Variable x:TypeArguments="x:Object" Name="idx" />
+              <Variable x:TypeArguments="x:Boolean" Name="ColorExists" />
+              <Variable x:TypeArguments="sd:DataTable" Name="ImageList" />
+              <Variable x:TypeArguments="x:String" Name="outData" />
+              <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Spanlist" />
+            </Sequence.Variables>
+            <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" ContinueOnError="True" DisplayName="Set Focus" sap2010:WorkflowViewState.IdRef="SetFocus_1">
+              <ui:SetFocus.Target>
+                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[Ali_BrowserWindow]" WaitForReady="INTERACTIVE" />
+              </ui:SetFocus.Target>
+            </ui:SetFocus>
+            <ui:WaitImageAppear FoundElement="{x:Null}" ContinueOnError="True" DisplayName="Find Image 'chrome.exe Holds'" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+              <ui:WaitImageAppear.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIASURBVDhP1VO/TxRhFNy9vQNjYa2xEUMgKHCXgFCjdpRoiC0xtibWmtjaaSQW2JnoPyB/ipVUcLe7B+GXAS243I4z75a9t+S4Sgonmdy792Zm3375NsAV4GpDs+Mt4PtDYIOtjRD4TFo9gDbL5/SY14HdHJtLwLcA2acI2XqI7sdgKKWRVh7zOhSh2XqAo2cR2gsRkvkK2g8ipPODqZlpqJVHXo/i3+GTClrjNcTTNDau8Vd19RLWck1kHnk9itCkQfFMFekshWMB4vsBktkqya1KpI4zaaSVR16PfugMBdMVCkZw9HoN7aXbiKdCxBbco2r1NJNGWvPQ69EPpaF1j9st3kCWZTh4uYLW3bBnzANVq6eZNNKahzMPF6pXIacqOPv5Aydf3qN5i4a560jqIz2yVk8zaaSVR16P0qbapHmHt+DtC2Ts7T2dw85Nnt9Ej6rV00waaeUZsml+ZnxyazLE782v6HbO8OvDG+ytLhhVq6eZNPZmWmZYqA7cwnVVeFbH716hkzbR/XNiVK2eZtJ4j0c51NE21tWq17C7PGFUbb08yNOjFJrWy8KkMWpXJp5kkGhXbrSkOfd49EN1ibmJN5yfl/XzWdHzM3o9itD9tUc45ZeR6upcNF5CaeWR16MI7Wxv4fD5Y356NFzYeCCpkVYeeT2K0H+J/yUU+AutijV44YABLQAAAABJRU5ErkJggg==" />
+              </ui:WaitImageAppear.Image>
+              <ui:WaitImageAppear.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+              </ui:WaitImageAppear.Target>
+            </ui:WaitImageAppear>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'H1'" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4a94c944c1cc64e93ff83950c7f4868e" Selector="&lt;webctrl parentid='j-product-detail-bd' class='product-name' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[ProductName]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:UiElementExists DisplayName="Element Exists 'STRONG'" Exists="[checkDes]" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="57f4b46ac0bd635d66c1fe62c35f4bb5" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='j-product-description' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[checkDes]" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Get Description" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="Feature" />
+                  </Sequence.Variables>
+                  <ui:FindChildren Children="[Spanlist]" ContinueOnError="True" DisplayName="Find Children" Filter="&lt;webctrl parentid='j-product-description' tag='SPAN' /&gt;" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+                    <ui:FindChildren.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='j-product-description' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:FindChildren.Target>
+                  </ui:FindChildren>
+                  <If Condition="[Spanlist isnot  Nothing]" sap2010:WorkflowViewState.IdRef="If_18">
+                    <If.Then>
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Spanlist]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="ui:UiElement">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <ui:GetAttribute Attribute="aaname" ContinueOnError="True" DisplayName="Get Attribute" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                                <ui:GetAttribute.Result>
+                                  <OutArgument x:TypeArguments="x:String">[Feature]</OutArgument>
+                                </ui:GetAttribute.Result>
+                                <ui:GetAttribute.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[item]" WaitForReady="INTERACTIVE" />
+                                </ui:GetAttribute.Target>
+                              </ui:GetAttribute>
+                              <If Condition="[Feature.Contains(&quot;//&quot;) or Feature.Contains(&quot;htttp:&quot;) or Feature.Contains(&quot;https:&quot;) or Feature.Length &lt; 2 or Feature.Contains(&quot;***&quot;)]" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If.Else>
+                                  <Sequence DisplayName="Appending Description line To Description" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <Assign sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[Description]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Description+Environment.NewLine+Feature]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </If.Then>
+            </If>
+            <ui:UiElementExists DisplayName="Element Exists 'DT'" Exists="[ColorExists]" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="53b8fb102aafed5450c1d830c8a63880" Selector="&lt;webctrl parentname='buyNowForm' tag='DIV' idx='1' /&gt;&lt;webctrl tag='DL' /&gt;&lt;webctrl tag='DT' aaname='Color:' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[ColorExists]" sap2010:WorkflowViewState.IdRef="If_5">
+              <If.Then>
+                <Sequence DisplayName="Sequence For Multiple Colors" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="ColorList" />
+                    <Variable x:TypeArguments="x:Boolean" Default="True" Name="CheckName" />
+                    <Variable x:TypeArguments="x:Int32" Default="1" Name="ColorCount" />
+                  </Sequence.Variables>
+                  <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ColorList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-sku-list-1'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='ItemName' attr='title' name2='ItemUrl' attr2='src'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='img' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100">
+                    <ui:ExtractData.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0b2d665adf3a05e315ac9a293054c8af" Selector="&lt;webctrl id='j-sku-list*' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                    </ui:ExtractData.Target>
+                  </ui:ExtractData>
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ColorList]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:Boolean" Name="ItemExists" />
+                          </Sequence.Variables>
+                          <ui:UiElementExists DisplayName="Element Exists" Exists="[ItemExists]" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                            <ui:UiElementExists.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[&quot;&lt;webctrl tag='DD' class='p-item-main' idx='1' /&gt;&lt;webctrl tag='UL' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;' /&gt;&lt;webctrl tag='A' /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                            </ui:UiElementExists.Target>
+                          </ui:UiElementExists>
+                          <If Condition="[ItemExists]" sap2010:WorkflowViewState.IdRef="If_16">
+                            <If.Then>
+                              <Sequence DisplayName="Sequence For  each color item" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="Price" />
+                                  <Variable x:TypeArguments="x:String" Name="Image" />
+                                  <Variable x:TypeArguments="x:String" Name="ItemName" />
+                                </Sequence.Variables>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'IMG'" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="459525dff1804274d8b7be05c6b7a46e" Selector="[&quot;&lt;webctrl tag='DD' class='p-item-main' idx='1' /&gt;&lt;webctrl tag='UL' /&gt;&lt;webctrl tag='LI' idx='&quot;+ColorCount.ToString+&quot;'/&gt;&lt;webctrl tag='A' /&gt;&lt;webctrl tag='IMG' src='&quot;+row(1).ToString+&quot;' /&gt;&quot;]" WaitForReady="NONE" />
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  j-sku-discount-pr...'" sap2010:WorkflowViewState.IdRef="GetValue_6">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="95c94b6be0e5256cd3e6b955424ceb85" Selector="&lt;webctrl tag='DIV' parentclass='p-current-price' /&gt;&lt;webctrl parentid='j-*' tag='SPAN' idx='2' /&gt;" WaitForReady="INTERACTIVE" />
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                                <If Condition="[Price.Contains(&quot;-&quot;)]" sap2010:WorkflowViewState.IdRef="If_17">
+                                  <If.Then>
+                                    <Assign sap2010:WorkflowViewState.IdRef="Assign_16">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Split(Price,"-")(1)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </If.Then>
+                                </If>
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_14">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[Image]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[Split(row(1).ToString,"_50x50.jpg")(0)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_15">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[ItemName]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[row(0).ToString+" : "+ProductName]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ItemName,link,Price,Description,Image,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_17">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[ColorCount]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[ColorCount+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Sequence For Single Color" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:GenericValue" Name="Price" />
+                    <Variable x:TypeArguments="x:Int32" Default="1" Name="count" />
+                    <Variable x:TypeArguments="x:String" Name="Image1" />
+                    <Variable x:TypeArguments="x:String" Name="Image2" />
+                    <Variable x:TypeArguments="x:String" Name="Image3" />
+                    <Variable x:TypeArguments="x:String" Name="Image4" />
+                    <Variable x:TypeArguments="x:String" Name="Image5" />
+                    <Variable x:TypeArguments="x:Boolean" Name="PriceExists" />
+                  </Sequence.Variables>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="639b8dfb814cf6132eee04f01b353a7f" Selector="&lt;webctrl tag='DIV' parentclass='p-current-price' /&gt;&lt;webctrl parentid='j-*' tag='SPAN' idx='2' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <If Condition="[Price.Contains(&quot;-&quot;)]" sap2010:WorkflowViewState.IdRef="If_19">
+                    <If.Then>
+                      <Assign sap2010:WorkflowViewState.IdRef="Assign_18">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[Price]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="ui:GenericValue">[Split(Price,"-")(1)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                  </If>
+                  <ui:ExtractData NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ImageList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'UL  j-image-thumb-list'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='imageUrl' attr='src'&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='span'/&gt;&lt;webctrl tag='img' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100">
+                    <ui:ExtractData.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9a6acbd105c06496ca80029ece3fe2cc" Selector="&lt;webctrl id='j-image-thumb-list' tag='UL' /&gt;" WaitForReady="COMPLETE" />
+                    </ui:ExtractData.Target>
+                  </ui:ExtractData>
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ImageList]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <If Condition="[count = 1]" sap2010:WorkflowViewState.IdRef="If_11">
+                            <If.Then>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_8">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[Image1]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                          <If Condition="[count = 2]" sap2010:WorkflowViewState.IdRef="If_12">
+                            <If.Then>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_9">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[Image2]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                          <If Condition="[count = 3]" sap2010:WorkflowViewState.IdRef="If_13">
+                            <If.Then>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_10">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[Image3]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                          <If Condition="[count = 4]" sap2010:WorkflowViewState.IdRef="If_14">
+                            <If.Then>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_11">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[Image4]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                          <If Condition="[count = 5]" sap2010:WorkflowViewState.IdRef="If_15">
+                            <If.Then>
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_12">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[Image5]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(row(0).ToString,"_50x50.jpg")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_13">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ProductName,link,Price,Description,Image1,Image2,Image3,Image4,Image5}]" DataTable="[io_ProductList]" DisplayName="Add Data Row" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <sads:DebugSymbol.Symbol>d1hDOlxVc2Vyc1xLaXNob3JlLU5pbW1hbGFcRG9jdW1lbnRzXFVpUGF0aFxBbGlfUGVyZm9ybWVyXEFsaUV4cHJlc3NcR2V0IFByb2R1Y3QgRGF0YS54YW1skQFKA6IDDgIBAVIFWQ4DAcABWgWgAxcCAQJXMFc5AwHDAVQxVDcDAcEBWpcCWsMCAwG/AVrOAlrjAgMBvQFgC50DFgIBA2oNbhsDAbkBbw12IgMBtgF3DX4bAwGyAX8NgwEiAwGtAYQBDbYBEgMBjAG3AQ27ASIDAYcBvAENnAMSAgEEalRqWgMBvAFsZ2x8AwG6AW9Jb08DAbgBcTtxQAMBtwF8OXxGAwGzAXmgAXnnAQMBtQGBAYsBgQHsAgMBsQGBAfcCgQH9AgMBsAF/Tn9aAwGuAYQBG4QBJwMBjQGGARG0ARwDAY8BuQGLAbkBjAIDAYsBuQGXArkBnQIDAYoBtwFKtwFZAwGIAbwBG7wBKgIBBb4BEaMCHAIBS6YCEZoDHAIBB4oBE44BJQMBqAGPAROzARgDAZABwQFDwQFJAgFNwgFBwgFEAgFMxAETyAEkAgF/yQETogIjAgFOqQJBqQJEAgEIsQITuAIhAgFHuQITxAIYAgFBxQITyQIkAgE5ygITmAMjAgENmQMTmQPzAQIBCYwBbYwBzgIDAawBigFKigFQAwGrAYoBdIoBswEDAaoBigEtigE5AwGpAY8BIY8BPAMBkQGRARexASQDAZIBxAHyA8QB9wMDAYYBxgGmAcYB0wEDAYUBxAGCAcQBhwEDAYQBxAFPxAFVAwGDAcQBYMQBbQMBgQHEAdEBxAGuAwMBgAHJAUTJAVECAX3PARmfAiQCAU+2Aka2Ak0CAUizAqYBswKUAgIBSrkCIbkCQgIBQrsCF8ICIAIBQ8UCzQPFAtIDAgFAxwKmAccC2gECAT/FAoIBxQKHAQIBPsUCT8UCVQIBPcUCYMUCbQIBO8UC1wHFAokDAgE6ygJEygJRAgE30AIZlQMkAgEOmQOUAZkDpgECAQuZAz6ZA4kBAgEKkQGmAZEBsgEDAacBlwEdrgEoAwGTAdMBG9cBMAIBeNgBG5YCIAIBVZcCG54CJAIBUMACScACXgIBRr0CSr0CUQIBRNECG9wCIAIBMN0CG+gCIAIBKekCG/QCIAIBIvUCG4ADIAIBG4EDG4wDIAIBFI0DG5QDJAIBD5gBH58BMQMBoAGgAR+tASQDAZQB1QFg1QHaAgIBfNUB5QLVAesCAgF70wFT0wFhAgF52AEp2AE3AgFW2gEflAIqAgFYnAJFnAJTAgFTmQJGmQJSAgFR0QIp0QI2AgEx0wIf2gIoAgEz3QIp3QI2AgEq3wIf5gIoAgEs6QIp6QI2AgEj6wIf8gIoAgEl9QIp9QI2AgEc9wIf/gIoAgEegQMpgQM2AgEVgwMfigMoAgEXkgNFkgNOAgESjwNGjwNNAgEQmAFTmAFZAwGkAZgBOpgBQgMBowGaAUuaAVQDAaEBnQF5nQGBAQMBpQGgAS2gAd8BAwGVAaIBI6sBLgMBmwHgASHuASwCAXXvASH2AS8CAXH3ASGCAiYCAWqDAiGKAioCAWaLAiGSAioCAWKTAiGTApUCAgFZ2AJK2AJyAgE21QJL1QJTAgE05AJK5AJyAgEv4QJL4QJTAgEt8AJK8AJyAgEo7QJL7QJTAgEm/AJK/AJyAgEh+QJL+QJTAgEfiANKiANyAgEahQNLhQNTAgEYowElqgEuAwGcAewBtAHsAa0DAgF34AF+4AGEAQIBdvQBTfQBVAIBcvEBtAHxAaICAgF09wEv9wFQAgFr+QElgAIuAgFtiAJMiAJ0AgFphQJNhQJUAgFnkAJMkAJvAgFljQJNjQJXAgFjkwK2AZMCyAECAWCTAkyTAqsBAgFaqAFQqAF5AwGfAaUBUaUBXgMBnQH+AVD+AWUCAXD7AVH7AVgCAW4=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="1287.33333333333,62" />
+      <sap2010:ViewStateData Id="SetFocus_1" sap:VirtualizedContainerService.HintSize="1251.33333333333,68" />
+      <sap2010:ViewStateData Id="WaitImageAppear_1" sap:VirtualizedContainerService.HintSize="1251.33333333333,106" />
+      <sap2010:ViewStateData Id="GetValue_1" sap:VirtualizedContainerService.HintSize="1251.33333333333,106" />
+      <sap2010:ViewStateData Id="UiElementExists_1" sap:VirtualizedContainerService.HintSize="1251.33333333333,106" />
+      <sap2010:ViewStateData Id="FindChildren_1" sap:VirtualizedContainerService.HintSize="628.666666666667,68" />
+      <sap2010:ViewStateData Id="GetAttribute_2" sap:VirtualizedContainerService.HintSize="464,96" />
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="264,186">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_4" sap:VirtualizedContainerService.HintSize="464,336.666666666667" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="486,596.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="502.666666666667,732" />
+      <sap2010:ViewStateData Id="If_18" sap:VirtualizedContainerService.HintSize="628.666666666667,882.666666666667" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="650.666666666667,1114.66666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="1251.33333333333,1265.33333333333" />
+      <sap2010:ViewStateData Id="UiElementExists_3" sap:VirtualizedContainerService.HintSize="1251.33333333333,106" />
+      <sap2010:ViewStateData Id="ExtractData_2" sap:VirtualizedContainerService.HintSize="664.666666666667,106" />
+      <sap2010:ViewStateData Id="UiElementExists_4" sap:VirtualizedContainerService.HintSize="612,68" />
+      <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="464,106" />
+      <sap2010:ViewStateData Id="GetValue_6" sap:VirtualizedContainerService.HintSize="464,106" />
+      <sap2010:ViewStateData Id="Assign_16" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_17" sap:VirtualizedContainerService.HintSize="464,212.666666666667" />
+      <sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="Assign_15" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="AddDataRow_2" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="486,894.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_16" sap:VirtualizedContainerService.HintSize="612,1045.33333333333" />
+      <sap2010:ViewStateData Id="Assign_17" sap:VirtualizedContainerService.HintSize="612,62" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="634,1379.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEachRow_2" sap:VirtualizedContainerService.HintSize="664.666666666667,1528.66666666667" />
+      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="686.666666666667,1798.66666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetValue_5" sap:VirtualizedContainerService.HintSize="516.666666666667,106" />
+      <sap2010:ViewStateData Id="Assign_18" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_19" sap:VirtualizedContainerService.HintSize="516.666666666667,212.666666666667" />
+      <sap2010:ViewStateData Id="ExtractData_1" sap:VirtualizedContainerService.HintSize="516.666666666667,106" />
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_11" sap:VirtualizedContainerService.HintSize="464,212.666666666667" />
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_12" sap:VirtualizedContainerService.HintSize="464,212.666666666667" />
+      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_13" sap:VirtualizedContainerService.HintSize="464,212.666666666667" />
+      <sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_14" sap:VirtualizedContainerService.HintSize="464,212.666666666667" />
+      <sap2010:ViewStateData Id="Assign_12" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_15" sap:VirtualizedContainerService.HintSize="464,212.666666666667" />
+      <sap2010:ViewStateData Id="Assign_13" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="486,1449.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEachRow_1" sap:VirtualizedContainerService.HintSize="516.666666666667,1598.66666666667" />
+      <sap2010:ViewStateData Id="AddDataRow_1" sap:VirtualizedContainerService.HintSize="516.666666666667,22" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="538.666666666667,2329.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_5" sap:VirtualizedContainerService.HintSize="1251.33333333333,2480" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="1273.33333333333,4601.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_1" sap:VirtualizedContainerService.HintSize="1287.33333333333,4747.33333333333" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="1309.33333333333,4973.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Get_Product_Data_1" sap:VirtualizedContainerService.HintSize="1349.33333333333,5053.33333333333" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
